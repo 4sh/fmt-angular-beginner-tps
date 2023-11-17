@@ -1,0 +1,12 @@
+[
+  {
+    "identity": {
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    "credentials": {
+      "login": "test",
+      "password": "test"
+    }
+  }
+]

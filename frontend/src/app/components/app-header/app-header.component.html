@@ -1,0 +1,7 @@
+<h3><a [routerLink]="['/']">winecellar.io</a></h3>
+<div>{{ currentUserIdentity?.firstName }} {{ currentUserIdentity?.lastName }}</div>
+<div>
+    <button type="button" (click)="logout()" *ngIf="currentUserIdentity">
+        {{ 'auth.logout' | translate }}
+    </button>
+</div>

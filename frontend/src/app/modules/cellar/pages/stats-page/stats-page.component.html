@@ -1,0 +1,52 @@
+<div *ngIf="stats">
+    <table>
+        <thead>
+        <th>{{ 'bottle.color' | translate }}</th>
+        <th>{{ 'cellar.stats.bottle.count' | translate }}</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let entry of stats.byColor | keyvalue">
+            <td>
+                {{ 'bottle.color.' + entry.key | translate }}
+            </td>
+            <td>
+                {{ entry.value }}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+        <th>{{ 'bottle.estate' | translate }}</th>
+        <th>{{ 'cellar.stats.bottle.count' | translate }}</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let entry of stats.byEstate | keyvalue">
+            <td>
+                {{ entry.key }}
+            </td>
+            <td>
+                {{ entry.value }}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+        <th>{{ 'bottle.vintage' | translate }}</th>
+        <th>{{ 'cellar.stats.bottle.count' | translate }}</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let entry of stats.byVintage | keyvalue">
+            <td>
+                {{ entry.key }}
+            </td>
+            <td>
+                {{ entry.value }}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

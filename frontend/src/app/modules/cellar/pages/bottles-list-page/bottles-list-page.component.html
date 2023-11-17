@@ -1,0 +1,10 @@
+<div>
+    <div class="bottles-list-head">
+        <button type="button" [routerLink]="['/cellar/bottle/new']">
+            {{ 'cellar.bottle.list.create' | translate }}
+        </button>
+    </div>
+    <div *ngFor="let bottle of bottles" class="bottles-list">
+        <bottle-tile [bottle]="bottle" (selected)="edit($event)"></bottle-tile>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "faf97093-cd84-47e5-87e0-4356d0a94d88",
+    "estate": "Chateau Petrus",
+    "vintage": 2020,
+    "color": "RED",
+    "stickerUrl": "http://localhost:3000/static/stickers/petrus.jpeg"
+  },
+  {
+    "id": "1ac9e305-7397-402b-86ae-bd838bd5a113",
+    "estate": "Chateau Petrus",
+    "vintage": 2019,
+    "color": "RED",
+    "stickerUrl": "http://localhost:3000/static/stickers/petrus.jpeg"
+  },
+  {
+    "id": "624af524-3812-483f-b30d-654d1f45b475",
+    "estate": "Chateau Cheval Blanc",
+    "vintage": 2022,
+    "color": "RED",
+    "stickerUrl": "http://localhost:3000/static/stickers/cheval-blanc.jpg"
+  },
+  {
+    "id": "774bd669-ce1c-44a9-8873-4553097bf310",
+    "estate": "Chateau Carbonnieux",
+    "vintage": 2017,
+    "color": "WHITE",
+    "stickerUrl": "http://localhost:3000/static/stickers/carbonnieux.jpg"
+  },
+  {
+    "id": "4b08ab75-75df-4120-9c7a-69b65accf052",
+    "estate": "Chateau Pape Clément",
+    "color": "RED",
+    "vintage": 2003,
+    "stickerUrl": "http://localhost:3000/static/stickers/pape-clement.png"
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "9976454f-c44a-4b82-9f16-8607412e64cd",
+    "userLogin": "test",
+    "userIdentity": {
+      "firstName": "John",
+      "lastName": "Doe"
+    }
+  }
+]

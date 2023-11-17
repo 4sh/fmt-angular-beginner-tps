@@ -1,0 +1,24 @@
+{
+  "app.footer": "2023 - tous droits reservés",
+
+  "auth.login": "Login",
+  "auth.password": "Mot de passe",
+  "auth.submit": "Valider",
+  "auth.logout": "Déconnexion",
+
+  "menu.cellar": "Cave",
+  "menu.stats": "Statistiques",
+
+  "bottle.estate": "Chateau",
+  "bottle.vintage": "Millésime",
+  "bottle.stickerUrl": "URL étiquette",
+  "bottle.color": "Couleur",
+  "bottle.color.RED": "Rouge",
+  "bottle.color.ROSE": "Rosé",
+  "bottle.color.WHITE": "Blanc",
+
+  "cellar.bottle.list.create": "Créer",
+  "cellar.bottle.edit.submit": "Valider",
+
+  "cellar.stats.bottle.count": "Nb de bouteilles"
+}

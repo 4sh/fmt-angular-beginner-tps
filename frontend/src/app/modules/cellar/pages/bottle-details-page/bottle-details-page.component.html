@@ -1,0 +1,29 @@
+<form #form="ngForm" *ngIf="bottle">
+    <label for="estate">{{ 'bottle.estate' | translate }}</label>
+    <input id="estate" name="estate" type="text" [(ngModel)]="bottle.estate" required/>
+
+    <hr>
+
+    <label for="vintage">{{ 'bottle.vintage' | translate }}</label>
+    <input id="vintage" name="vintage" type="number" [(ngModel)]="bottle.vintage" required/>
+
+    <hr>
+
+    <label for="color">{{ 'bottle.color' | translate }}</label>
+    <select id="color" name="color" [(ngModel)]="bottle.color" required>
+        <option [value]="'RED'">{{ 'bottle.color.RED' | translate }}</option>
+        <option [value]="'ROSE'">{{ 'bottle.color.ROSE' | translate }}</option>
+        <option [value]="'WHITE'">{{ 'bottle.color.WHITE' | translate }}</option>
+    </select>
+
+    <hr>
+
+    <label for="stickerUrl">{{ 'bottle.stickerUrl' | translate }}</label>
+    <input id="stickerUrl" name="stickerUrl" type="text" [(ngModel)]="bottle.stickerUrl"/>
+
+    <hr>
+
+    <button type="submit" [disabled]="form.invalid" (click)="submit()">
+        {{ 'cellar.bottle.edit.submit' | translate }}
+    </button>
+</form>

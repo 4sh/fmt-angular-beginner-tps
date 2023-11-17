@@ -1,0 +1,15 @@
+.bottle {
+    border-style: solid;
+
+    &.RED {
+        border-color: red;
+    }
+
+    &.WHITE {
+        border-color: yellow;
+    }
+
+    &.ROSE {
+        border-color: pink;
+    }
+}
