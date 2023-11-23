@@ -6,7 +6,7 @@
   "scripts": {
     "initdb": "rm -rf db && cp -r db-samples db",
     "prestart": "tsc",
-    "start": "ts-node-esm src/index.ts"
+    "start": "node --no-warnings --loader ts-node/esm src/index.ts"
   },
   "exports": "./dist/index.js",
   "author": "",
