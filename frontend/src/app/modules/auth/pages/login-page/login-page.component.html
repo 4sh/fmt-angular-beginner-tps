@@ -5,7 +5,7 @@
     <label for="password">{{ 'auth.password' | translate }}</label>
     <input id="password" name="password" type="password" [(ngModel)]="password" autocomplete="off" required/>
 
-    <button type="submit" [disabled]="form.invalid" (click)="submit()">
+    <button type="submit" [disabled]="form.invalid" (click)="authenticate()">
         {{ 'auth.submit' | translate }}
     </button>
 </form>

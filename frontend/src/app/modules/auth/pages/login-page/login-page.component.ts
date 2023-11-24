@@ -17,7 +17,7 @@ export class LoginPageComponent implements OnDestroy {
                 private router: Router) {
     }
 
-    public submit(): void {
+    public authenticate(): void {
         this.subscription = this.authService
             .login(this.login!, this.password!)
             .subscribe(() => this.router.navigate(['/cellar']));
