@@ -11,6 +11,7 @@ import {BottlesListPageComponent} from './pages/bottles-list-page/bottles-list-p
 import {BottleDetailsPageComponent} from './pages/bottle-details-page/bottle-details-page.component';
 import {StatsPageComponent} from './pages/stats-page/stats-page.component';
 import {TranslateModule} from '@ngx-translate/core';
+import {SharedModule} from '../../../shared/shared.module';
 
 const components: unknown[] = [
     BottleTileComponent
@@ -23,10 +24,13 @@ const pages: unknown[] = [
     StatsPageComponent
 ];
 
+const pipes: unknown[] = [];
+
 @NgModule({
     declarations: [
         components,
-        pages
+        pages,
+        pipes
     ],
     imports: [
         CommonModule,
@@ -35,6 +39,7 @@ const pages: unknown[] = [
         RouterModule.forChild(routes),
         FormsModule,
         TranslateModule,
+        SharedModule,
         NgOptimizedImage
     ]
 })

@@ -1,10 +1,12 @@
 <div>
     <div class="bottles-list-head">
+        <input type="search" [(ngModel)]="query" [placeholder]="'cellar.bottle.list.search' | translate" />
+
         <button type="button" [routerLink]="['/cellar/bottle/new']">
             {{ 'cellar.bottle.list.create' | translate }}
         </button>
     </div>
-    <div *ngFor="let bottle of bottles trackBy: trackByBottleId" class="bottles-list">
+    <div *ngFor="let bottle of (bottles | filterBy:'estate':query) trackBy: trackByBottleId" class="bottles-list">
         <bottle-tile [bottle]="bottle" (selected)="edit($event)"></bottle-tile>
     </div>
 </div>

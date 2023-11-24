@@ -10,15 +10,17 @@ import {Router} from '@angular/router';
     styleUrl: './bottles-list-page.component.scss'
 })
 export class BottlesListPageComponent implements OnInit, OnDestroy {
-    public bottles?: Bottle[];
-    private subscription?: Subscription;
+    public bottles: Bottle[] = [];
+    public query: string = '';
+
+    private fetchBottlesSubscription?: Subscription;
 
     constructor(private router: Router,
                 private cellarService: CellarService) {
     }
 
     ngOnInit(): void {
-        this.subscription = this.cellarService
+        this.fetchBottlesSubscription = this.cellarService
             .getManyBottles()
             .subscribe(bottles => this.bottles = bottles);
     }
@@ -32,6 +34,6 @@ export class BottlesListPageComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy(): void {
-        this.subscription?.unsubscribe();
+        this.fetchBottlesSubscription?.unsubscribe();
     }
 }
