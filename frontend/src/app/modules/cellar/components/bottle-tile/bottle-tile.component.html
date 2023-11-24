@@ -3,6 +3,6 @@
     <p>{{ bottle.vintage }}</p>
     <p>{{ 'bottle.color.' + bottle.color | translate }}</p>
     <p *ngIf="bottle.stickerUrl">
-        <img [src]="bottle.stickerUrl" width="50px" height="50px" alt=""/>
+        <img [ngSrc]="bottle.stickerUrl" [width]="50" [height]="50" alt=""/>
     </p>
 </div>
