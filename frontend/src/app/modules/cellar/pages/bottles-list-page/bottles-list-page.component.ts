@@ -27,6 +27,10 @@ export class BottlesListPageComponent implements OnInit, OnDestroy {
         this.router.navigate(['/cellar/bottle', bottle.id, 'details']).then();
     }
 
+    public trackByBottleId(index: number, bottle: Bottle): string {
+        return bottle.id!;
+    }
+
     ngOnDestroy(): void {
         this.subscription?.unsubscribe();
     }
