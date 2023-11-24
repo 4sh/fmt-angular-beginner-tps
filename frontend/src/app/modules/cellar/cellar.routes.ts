@@ -24,6 +24,10 @@ export const routes: Routes = [
             {
                 path: 'stats',
                 component: StatsPageComponent
+            },
+            {
+                path: '**',
+                redirectTo: ''
             }
         ]
     }
