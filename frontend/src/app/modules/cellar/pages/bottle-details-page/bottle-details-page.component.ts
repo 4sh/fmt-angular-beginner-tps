@@ -10,9 +10,10 @@ import {Bottle, Color} from '../../models/bottle.model';
     styleUrl: './bottle-details-page.component.scss'
 })
 export class BottleDetailsPageComponent implements OnInit, OnDestroy {
-    private bottlesSubscription?: Subscription;
-    private bottleSubscription?: Subscription;
     public bottle: Bottle = {id: undefined, estate: '', color: Color.RED, vintage: 2000};
+
+    private fetchBottleSubscription?: Subscription;
+    private saveBottleSubscription?: Subscription;
 
     constructor(private route: ActivatedRoute,
                 private router: Router,
@@ -20,7 +21,7 @@ export class BottleDetailsPageComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        this.bottlesSubscription = this.route
+        this.fetchBottleSubscription = this.route
             .paramMap
             .pipe(
                 filter(map => map.has('id')),
@@ -33,18 +34,18 @@ export class BottleDetailsPageComponent implements OnInit, OnDestroy {
     public saveBottle(): void {
         const redirector = () => this.router.navigate(['/cellar']);
         if (this.bottle.id) {
-            this.bottleSubscription = this.cellarService
+            this.saveBottleSubscription = this.cellarService
                 .updateOneBottle(this.bottle)
                 .subscribe(redirector);
         } else {
-            this.bottleSubscription = this.cellarService
+            this.saveBottleSubscription = this.cellarService
                 .createOneBottle(this.bottle)
                 .subscribe(redirector);
         }
     }
 
     ngOnDestroy(): void {
-        this.bottlesSubscription?.unsubscribe();
-        this.bottleSubscription?.unsubscribe();
+        this.fetchBottleSubscription?.unsubscribe();
+        this.saveBottleSubscription?.unsubscribe();
     }
 }
