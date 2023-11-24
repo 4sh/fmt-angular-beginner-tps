@@ -5,7 +5,7 @@
     <hr>
 
     <label for="vintage">{{ 'bottle.vintage' | translate }}</label>
-    <input id="vintage" name="vintage" type="number" [(ngModel)]="bottle.vintage" required/>
+    <input id="vintage" name="vintage" type="number" [(ngModel)]="bottle.vintage" min="1800" [max]="vintageMaxYear" required/>
 
     <hr>
 
