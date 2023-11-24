@@ -11,9 +11,9 @@
 
     <label for="color">{{ 'bottle.color' | translate }}</label>
     <select id="color" name="color" [(ngModel)]="bottle.color" required>
-        <option [value]="'RED'">{{ 'bottle.color.RED' | translate }}</option>
-        <option [value]="'ROSE'">{{ 'bottle.color.ROSE' | translate }}</option>
-        <option [value]="'WHITE'">{{ 'bottle.color.WHITE' | translate }}</option>
+        <option *ngFor="let color of Color | keyvalue" [value]="color.key">
+            {{ 'bottle.color.' + color.key | translate }}
+        </option>
     </select>
 
     <hr>

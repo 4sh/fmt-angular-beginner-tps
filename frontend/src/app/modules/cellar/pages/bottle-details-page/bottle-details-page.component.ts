@@ -10,6 +10,7 @@ import {Bottle, Color} from '../../models/bottle.model';
     styleUrl: './bottle-details-page.component.scss'
 })
 export class BottleDetailsPageComponent implements OnInit, OnDestroy {
+    public Color = Color;
     public bottle: Bottle = {id: undefined, estate: '', color: Color.RED, vintage: 2000};
 
     private fetchBottleSubscription?: Subscription;
