@@ -30,7 +30,7 @@ export class BottleDetailsPageComponent implements OnInit, OnDestroy {
             .subscribe(bottle => this.bottle = bottle);
     }
 
-    public submit(): void {
+    public saveBottle(): void {
         const redirector = () => this.router.navigate(['/cellar']);
         if (this.bottle.id) {
             this.bottleSubscription = this.cellarService
