@@ -9,7 +9,7 @@
   "menu.cellar": "Cave",
   "menu.stats": "Statistiques",
 
-  "bottle.estate": "Chateau",
+  "bottle.estate": "Château",
   "bottle.vintage": "Millésime",
   "bottle.stickerUrl": "URL étiquette",
   "bottle.color": "Couleur",
@@ -17,6 +17,7 @@
   "bottle.color.ROSE": "Rosé",
   "bottle.color.WHITE": "Blanc",
 
+  "cellar.bottle.list.search": "Rechercher un château...",
   "cellar.bottle.list.create": "Créer",
   "cellar.bottle.edit.submit": "Valider",
 
