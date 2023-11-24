@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {CommonModule, UpperCasePipe} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {AuthPageComponent} from './pages/auth-page/auth-page.component';
 import {LoginPageComponent} from './pages/login-page/login-page.component';
@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {routes} from './auth.routes';
 import {TranslateModule} from '@ngx-translate/core';
+import {UserIdentityPipe} from './pipes/user-identity.pipe';
 
 const components: unknown[] = [];
 
@@ -16,10 +17,18 @@ const pages: unknown[] = [
     LoginPageComponent
 ];
 
+const pipes: unknown[] = [
+    UserIdentityPipe
+];
+
 @NgModule({
     declarations: [
         components,
-        pages
+        pages,
+        pipes
+    ],
+    exports: [
+        pipes
     ],
     imports: [
         CommonModule,
@@ -28,6 +37,9 @@ const pages: unknown[] = [
         RouterModule.forChild(routes),
         FormsModule,
         TranslateModule
+    ],
+    providers: [
+        UpperCasePipe
     ]
 })
 export class AuthModule {
