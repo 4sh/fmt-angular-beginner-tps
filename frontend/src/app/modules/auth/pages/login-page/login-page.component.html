@@ -1,9 +1,11 @@
 <form #form="ngForm">
     <label for="login">{{ 'auth.login' | translate }}</label>
-    <input id="login" name="login" type="text" [(ngModel)]="login" required/>
+    <input id="login" name="login" type="text" [(ngModel)]="login" #loginControl="ngModel" required
+           [class.error]="loginControl.errors && loginControl.errors['required'] === true"/>
 
     <label for="password">{{ 'auth.password' | translate }}</label>
-    <input id="password" name="password" type="password" [(ngModel)]="password" autocomplete="off" required/>
+    <input id="password" name="password" type="password" [(ngModel)]="password" #passwordControl="ngModel" required
+           [class.error]="passwordControl.errors && passwordControl.errors['required'] === true"/>
 
     <button type="submit" [disabled]="form.invalid" (click)="authenticate()">
         {{ 'auth.submit' | translate }}

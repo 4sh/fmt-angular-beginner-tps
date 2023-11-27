@@ -21,5 +21,8 @@
   "cellar.bottle.list.create": "Créer",
   "cellar.bottle.edit.submit": "Valider",
 
-  "cellar.stats.bottle.count": "Nb de bouteilles"
+  "cellar.stats.bottle.count": "Nb de bouteilles",
+
+  "errors.auth.missingLogin": "Merci de renseigner un login",
+  "errors.auth.missingPassword": "Merci de renseigner un mot de passe"
 }
