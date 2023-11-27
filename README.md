@@ -1,4 +1,4 @@
-# 4SH Learning - Formation Angular
+# 4SH Learning - Formation Angular - Fondamentaux
 
 ## Run
 
