@@ -1,15 +1,19 @@
 # 4SH Learning - Formation Angular - Fondamentaux
 
-## Run
+## TPs
 
-### Backend
+code snippets : https://github.com/4sh/fmt-angular-beginner-code-snippets
+
+### Run
+
+#### Backend
 ```
 cd backend
 npm run initdb 
 npm start
 ```
 
-### Frontend
+#### Frontend
 ```
 cd frontend
 npm start
