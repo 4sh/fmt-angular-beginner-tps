@@ -15,9 +15,13 @@ npm run initdb
 npm start
 ```
 
+or you can just start the `Start backend` run configuration under IntelliJ IDEA
+
 #### Frontend
 ```
 cd frontend
 npm start
 ```
+
+or you can just start the `Start frontend` run configuration under IntelliJ IDEA
 
