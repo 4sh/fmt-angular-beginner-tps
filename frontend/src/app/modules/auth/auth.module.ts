@@ -39,7 +39,8 @@ const pipes: unknown[] = [
         TranslateModule
     ],
     providers: [
-        UpperCasePipe
+        UpperCasePipe,
+        UserIdentityPipe
     ]
 })
 export class AuthModule {
