@@ -10,4 +10,4 @@ export type Bottle = {
     vintage: number,
     color: Color;
     stickerUrl?: string;
-}
+};

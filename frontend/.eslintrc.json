@@ -37,6 +37,13 @@
                         "style": "kebab-case"
                     }
                 ],
+                "@typescript-eslint/no-unused-vars": [
+                    "error",
+                    {
+                        "vars": "all",
+                        "args": "none"
+                    }
+                ],
                 "check-file/folder-naming-convention": [
                     "error",
                     {
@@ -51,6 +58,28 @@
                     {
                         "ignoreMiddleExtensions": true
                     }
+                ],
+                // Note: the base rule is disabled on purpose as it can report incorrect errors when the @typescript-eslint one is turned on
+                "object-curly-spacing": "off",
+                "@typescript-eslint/object-curly-spacing": [
+                    "error",
+                    "never"
+                ],
+                // Note: the base rule is disabled on purpose as it can report incorrect errors when the @typescript-eslint one is turned on
+                "quotes": "off",
+                "@typescript-eslint/quotes": [
+                    2,
+                    "single",
+                    {
+                        "avoidEscape": true,
+                        "allowTemplateLiterals": true
+                    }
+                ],
+                // Note: the base rule is disabled on purpose as it can report incorrect errors when the @typescript-eslint one is turned on
+                "semi": "off",
+                "@typescript-eslint/semi": [
+                    "error",
+                    "always"
                 ]
             }
         },
