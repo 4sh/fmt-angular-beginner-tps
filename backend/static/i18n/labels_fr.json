@@ -4,6 +4,8 @@
   "auth.login": "Login",
   "auth.password": "Mot de passe",
   "auth.submit": "Valider",
+  "auth.submit.success": "Connecté en tant que {{username}}",
+  "auth.submit.error": "Échec de l'authentification",
   "auth.logout": "Déconnexion",
 
   "menu.cellar": "Cave",
