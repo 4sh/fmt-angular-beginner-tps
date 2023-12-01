@@ -19,7 +19,7 @@ export class FilterByPipe implements PipeTransform {
             .filter(item => {
                 const property = item[key];
                 if (this.isAlphanumericProperty(property)) {
-                    return property.toString().match(new RegExp(value.trim(), 'i'))
+                    return property.toString().match(new RegExp(value.trim(), 'i'));
                 } else {
                     return false;
                 }
