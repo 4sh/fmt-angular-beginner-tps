@@ -3,6 +3,9 @@
     "ignorePatterns": [
         "projects/**/*"
     ],
+    "plugins": [
+        "check-file"
+    ],
     "overrides": [
         {
             "files": [
@@ -32,6 +35,21 @@
                         "type": "element",
                         "prefix": "",
                         "style": "kebab-case"
+                    }
+                ],
+                "check-file/folder-naming-convention": [
+                    "error",
+                    {
+                        "src/app/**/": "KEBAB_CASE"
+                    }
+                ],
+                "check-file/filename-naming-convention": [
+                    "error",
+                    {
+                        "src/app/**/*.{js,ts,html,scss}": "KEBAB_CASE"
+                    },
+                    {
+                        "ignoreMiddleExtensions": true
                     }
                 ]
             }
