@@ -1,8 +1,11 @@
 <ul class="app-menu" *ngIf="isLoggedIn">
     <li>
-        <a [routerLink]="['/cellar']">{{ 'menu.cellar' | translate }}</a>
+        <a [routerLink]="['/cellar']" routerLinkActive="active">
+            {{ 'menu.cellar' | translate }}</a>
     </li>
     <li>
-        <a [routerLink]="['/cellar/stats']">{{ 'menu.stats' | translate }}</a>
+        <a [routerLink]="['/stats']" routerLinkActive="active">
+            {{ 'menu.stats' | translate }}
+        </a>
     </li>
 </ul>

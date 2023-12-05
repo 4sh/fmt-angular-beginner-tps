@@ -22,13 +22,13 @@ export const routes: Routes = [
                 component: BottleDetailsPageComponent
             },
             {
-                path: 'stats',
-                component: StatsPageComponent
-            },
-            {
                 path: '**',
                 redirectTo: ''
             }
         ]
+    },
+    {
+        path: 'stats',
+        component: StatsPageComponent
     }
 ];
