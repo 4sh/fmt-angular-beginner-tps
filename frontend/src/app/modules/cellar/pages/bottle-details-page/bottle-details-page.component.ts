@@ -3,6 +3,7 @@ import {CellarService} from '../../services/cellar.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {filter, map, Subscription, switchMap} from 'rxjs';
 import {Bottle, Color} from '../../models/bottle.model';
+import {ToastService} from "../../../../../shared/services/toast.service";
 
 @Component({
     selector: 'bottle-details-page',
@@ -19,6 +20,7 @@ export class BottleDetailsPageComponent implements OnInit, OnDestroy {
 
     constructor(private route: ActivatedRoute,
                 private router: Router,
+                private toastService: ToastService,
                 private cellarService: CellarService) {
     }
 
@@ -34,15 +36,18 @@ export class BottleDetailsPageComponent implements OnInit, OnDestroy {
     }
 
     public saveBottle(): void {
-        const redirector = () => this.router.navigate(['/cellar']);
+        const onAfterSave = () => {
+            this.toastService.success('bottle.createOrUpdate.success');
+            this.router.navigate(['/cellar']);
+        }
         if (this.bottle.id) {
             this.saveBottleSubscription = this.cellarService
                 .updateOneBottle(this.bottle)
-                .subscribe(redirector);
+                .subscribe(onAfterSave);
         } else {
             this.saveBottleSubscription = this.cellarService
                 .createOneBottle(this.bottle)
-                .subscribe(redirector);
+                .subscribe(onAfterSave);
         }
     }
 
