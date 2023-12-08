@@ -6,7 +6,11 @@ code snippets : https://github.com/4sh/fmt-angular-beginner-code-snippets
 
 ### Run
 
-Node.js v20.10+ is required to run the project. We recommend to use a node version manager such as nvm to switch between Node.js versions.
+Node.js v20.10+ is required to run the project. 
+
+You can check the current Node.js version by running the `node -v` command.
+
+We recommend using a node version manager such as `nvm` to switch between Node.js versions.
 
 #### Backend
 ```
