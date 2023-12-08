@@ -4,7 +4,8 @@
   "type": "module",
   "description": "",
   "scripts": {
-    "initdb": "rm -rf db && cp -r db-samples db",
+    "preinitdb": "npm install",
+    "initdb": "shx rm -rf db && shx cp -r db-samples db",
     "prestart": "npm install && tsc",
     "start": "node --no-warnings --loader ts-node/esm src/index.ts"
   },
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/lodash": "^4.14.201",
+    "shx": "0.3.4",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
