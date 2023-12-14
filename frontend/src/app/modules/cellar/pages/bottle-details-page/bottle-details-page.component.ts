@@ -1,7 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy} from '@angular/core';
 import {CellarService} from '../../services/cellar.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {filter, map, Subscription, switchMap} from 'rxjs';
+import {Router} from '@angular/router';
+import {Subscription} from 'rxjs';
 import {Bottle, Color} from '../../models/bottle.model';
 import {ToastService} from "../../../../../shared/services/toast.service";
 
@@ -10,7 +10,7 @@ import {ToastService} from "../../../../../shared/services/toast.service";
     templateUrl: './bottle-details-page.component.html',
     styleUrl: './bottle-details-page.component.scss'
 })
-export class BottleDetailsPageComponent implements OnInit, OnDestroy {
+export class BottleDetailsPageComponent implements OnDestroy {
     public Color = Color;
     public bottle: Bottle = {id: undefined, estate: '', color: Color.RED, vintage: 2000};
     public vintageMaxYear: number = new Date().getFullYear();
@@ -18,21 +18,18 @@ export class BottleDetailsPageComponent implements OnInit, OnDestroy {
     private fetchBottleSubscription?: Subscription;
     private saveBottleSubscription?: Subscription;
 
-    constructor(private route: ActivatedRoute,
-                private router: Router,
+    constructor(private router: Router,
                 private toastService: ToastService,
                 private cellarService: CellarService) {
     }
 
-    ngOnInit(): void {
-        this.fetchBottleSubscription = this.route
-            .paramMap
-            .pipe(
-                filter(map => map.has('id')),
-                map(map => map.get('id')),
-                switchMap(id => this.cellarService.getOneBottleById(id!))
-            )
-            .subscribe(bottle => this.bottle = bottle);
+    @Input()
+    public set id(id: string) {
+        if (id) {
+            this.cellarService
+                .getOneBottleById(id!)
+                .subscribe(bottle => this.bottle = bottle);
+        }
     }
 
     public saveBottle(): void {
