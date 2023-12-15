@@ -1,0 +1,29 @@
+{
+  "app.footer": "2023 - all rights reserved",
+
+  "auth.login": "Login",
+  "auth.password": "Password",
+  "auth.submit": "Validate",
+  "auth.submit.success": "Logged in as {{username}}",
+  "auth.submit.error": "Authentication error",
+  "auth.logout": "Logout",
+
+  "menu.cellar": "Cellar",
+  "menu.stats": "Statistics",
+
+  "bottle.estate": "Estate",
+  "bottle.vintage": "Vintage",
+  "bottle.stickerUrl": "Sticker URL",
+  "bottle.createOrUpdate.success": "The bottle has been created / updated with success",
+  "bottle.color": "Color",
+  "bottle.color.RED": "Red",
+  "bottle.color.ROSE": "Rose",
+  "bottle.color.WHITE": "White",
+
+  "cellar.bottle.list.search": "Search an estate ...",
+  "cellar.bottle.list.create": "Create",
+  "cellar.bottle.edit.submit": "Validate",
+  "cellar.bottle.edit.cancel": "Cancel",
+
+  "cellar.stats.bottle.count": "Bottles count"
+}

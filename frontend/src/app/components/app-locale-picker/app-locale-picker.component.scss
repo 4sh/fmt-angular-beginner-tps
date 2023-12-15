@@ -1,0 +1,8 @@
+.locale-item {
+    text-decoration: underline;
+    cursor: pointer;
+    &.active {
+        color: green;
+        text-decoration-style: double;
+    }
+}

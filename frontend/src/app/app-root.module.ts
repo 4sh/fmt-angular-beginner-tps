@@ -1,5 +1,5 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {LOCALE_ID, NgModule} from '@angular/core';
+import {CommonModule, registerLocaleData} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {routes} from './app-root.routes';
 import {AppRootPageComponent} from './pages/app-root-page/app-root-page.component';
@@ -15,6 +15,13 @@ import {AuthModule} from './modules/auth/auth.module';
 import {CellarModule} from './modules/cellar/cellar.module';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {LocaleService} from './services/locale.service';
+import localeEn from '@angular/common/locales/en';
+import localeFr from '@angular/common/locales/fr';
+import {AppLocalePickerComponent} from './components/app-locale-picker/app-locale-picker.component';
+
+registerLocaleData(localeEn);
+registerLocaleData(localeFr);
 
 export function createTranslateLoader(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient, '/static/i18n/labels_', '.json');
@@ -23,7 +30,8 @@ export function createTranslateLoader(httpClient: HttpClient) {
 const components: unknown[] = [
     AppHeaderComponent,
     AppMenuComponent,
-    AppFooterComponent
+    AppFooterComponent,
+    AppLocalePickerComponent
 ];
 
 const pages: unknown[] = [
@@ -41,7 +49,6 @@ const pages: unknown[] = [
         HttpClientModule,
         RouterModule.forRoot(routes, {bindToComponentInputs: true}),
         TranslateModule.forRoot({
-            defaultLanguage: 'fr',
             loader: {
                 provide: TranslateLoader,
                 useFactory: (createTranslateLoader),
@@ -56,7 +63,12 @@ const pages: unknown[] = [
     providers: [
         provideHttpClient(
             withInterceptors([authInterceptor, errorInterceptor])
-        )
+        ),
+        {
+            provide: LOCALE_ID,
+            deps: [LocaleService],
+            useFactory: (localeService: LocaleService) => localeService.getLocale()
+        }
     ]
 })
 export class AppRootModule {

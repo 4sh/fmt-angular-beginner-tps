@@ -1,0 +1,6 @@
+<span *ngFor="let locale of supportedLocales"
+      (click)="setLocale(locale)"
+      class="locale-item" [class.active]="currentLocale === locale">
+    {{ locale }} |
+</span>
+
