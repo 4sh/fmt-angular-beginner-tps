@@ -23,6 +23,9 @@
 
     <hr>
 
+    <button type="button" [routerLink]="['/cellar']">
+        {{ 'cellar.bottle.edit.cancel' | translate }}
+    </button>
     <button type="submit" [disabled]="form.invalid" (click)="saveBottle()">
         {{ 'cellar.bottle.edit.submit' | translate }}
     </button>

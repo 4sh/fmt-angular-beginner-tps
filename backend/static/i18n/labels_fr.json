@@ -23,6 +23,7 @@
   "cellar.bottle.list.search": "Rechercher un château...",
   "cellar.bottle.list.create": "Créer",
   "cellar.bottle.edit.submit": "Valider",
+  "cellar.bottle.edit.cancel": "Annuler",
 
   "cellar.stats.bottle.count": "Nb de bouteilles"
 }
