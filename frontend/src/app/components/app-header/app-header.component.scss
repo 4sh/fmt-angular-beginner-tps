@@ -1,0 +1,51 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--appConfig-globalSpacing);
+    background-color: hsl(var(--appColor-wine) / 0.3);
+}
+
+.appHeader {
+    &-logo {
+        display: inline-block;
+        transition: filter var(--appConfig-globalTransition);
+
+        &:hover {
+            cursor: pointer;
+            filter: drop-shadow(0 0 4px hsl(var(--appColor-wine-h)
+                                           var(--appColor-wine-s)
+                                           calc(var(--appColor-wine-l) + (100% - var(--appColor-wine-l)) * 0.5))
+            );
+        }
+    }
+
+    &-user {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        filter: drop-shadow(0 2px 1px hsl(var(--appColor-wine))) drop-shadow(0 -2px 1px hsl(var(--appColor-burgundy)));
+    }
+
+    &-options {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.appHeaderUser {
+    &-icon {
+        font: {
+            size: 4rem;
+        };
+    }
+
+    &-name {
+        font: {
+            size: 1.8rem;
+            weight: bold;
+        };
+    }
+}

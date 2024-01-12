@@ -1,0 +1,54 @@
+:host {
+    flex: 1;
+    display: flex;
+    padding: calc(var(--appConfig-globalSpacing) * 2);
+    color: white;
+    background: {
+        color: hsl(var(--appColor-neutral-gray_medium) / 0.9);
+    };
+    overflow: auto;
+}
+
+.stats {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    width: 50vw;
+    text-align: center;
+    border-collapse: collapse;
+    border: 0.2rem solid hsl(var(--appColor-burgundy));
+    table-layout: fixed;
+    margin: {
+        bottom: calc(var(--appConfig-globalSpacing) * 4);
+    };
+}
+
+table td,
+table th {
+    border: 0.1rem solid hsl(var(--appColor-burgundy));
+    padding: var(--appConfig-globalSpacing);
+}
+table tbody td {
+}
+table td {
+    color: hsl(var(--appColor-purple_dark));
+    background: hsl(var(--appColor-neutral-gray_light));
+}
+table thead {
+    background: hsl(var(--appColor-wine));
+    border-bottom: 0.4rem solid hsl(var(--appColor-burgundy));
+}
+table thead th {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    border-left: 2px solid hsl(var(--appColor-burgundy));
+}
+table thead th:first-child {
+    border-left: none;
+}

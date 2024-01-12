@@ -1,0 +1,37 @@
+@use 'sass:color';
+@use 'sass:map';
+
+$appColorMap : (
+    'wine' : #A6035D,
+    'burgundy' : #590232,
+    'purple' : #4A2D73,
+    'purple_alternate' : #44308C,
+    'purple_dark' : #260C40,
+    'purpleGrey' : #1c1522,
+    'error' : #D41121,
+    'success' : #22C33D,
+    'warning' : #FFBA1A,
+    'neutral-gray_light' : #F2F2F3,
+    'neutral-gray_medium' : #C8CDD0,
+    'neutral-gray_dark' : #415058,
+    'neutral-gray_black' : #1F292E,
+    'white-wine' : #d4e8c0,
+    'rose-wine' : #dd59a0,
+) !default;
+
+@mixin getAllHslColorVariables($name, $color) {
+    --appColor-#{$name}: #{color.hue($color)} #{color.saturation($color)} #{color.lightness($color)};
+    --appColor-#{$name}-h: #{color.hue($color)};
+    --appColor-#{$name}-s: #{color.saturation($color)};
+    --appColor-#{$name}-l: #{color.lightness($color)};
+}
+
+:root {
+    @each $colorName, $colorValue in $appColorMap {
+        @include getAllHslColorVariables($colorName, $colorValue);
+    }
+
+    --appConfig-globalRadius: 0.8rem;
+    --appConfig-globalSpacing: 0.8rem;
+    --appConfig-globalTransition: ease-in-out 0.25s;
+}

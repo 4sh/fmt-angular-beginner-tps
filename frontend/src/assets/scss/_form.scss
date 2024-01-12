@@ -1,0 +1,57 @@
+label {
+    font: {
+        weight: bold;
+    };
+    color: hsl(var(--appColor-purpleGrey));
+    margin-bottom: var(--appConfig-globalSpacing);
+
+    &.required::after {
+        content: ' *';
+        color: hsl(var(--appColor-error));
+    }
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    color: hsl(var(--appColor-purple_dark));
+    padding: var(--appConfig-globalSpacing);
+    border-radius: var(--appConfig-globalRadius);
+    border: 2px solid transparent;
+    outline: none;
+    transition: border var(--appConfig-globalTransition), box-shadow var(--appConfig-globalTransition);
+
+    &:focus {
+        border-color: hsl(var(--appColor-wine));
+        box-shadow: 0 0 5px 1px hsl(var(--appColor-wine-h)
+                                var(--appColor-wine-s)
+                                calc(var(--appColor-wine-l) + (100% - var(--appColor-wine-l)) * 0.3));
+    }
+
+    &._error {
+        filter: drop-shadow(0 4px 0 hsl(var(--appColor-error)));
+    }
+}
+
+form {
+    input,
+    select,
+    textarea {
+        margin-bottom: calc(var(--appConfig-globalSpacing) * 2);
+    }
+}
+
+.formGroup {
+    input {
+        margin: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}

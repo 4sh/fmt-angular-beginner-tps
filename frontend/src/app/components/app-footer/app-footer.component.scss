@@ -1,0 +1,23 @@
+:host {
+    padding: var(--appConfig-globalSpacing);
+    text-align: center;
+    text-decoration: none;
+    font: {
+        size: 1.2rem;
+        style: italic;
+    };
+    color: white;
+    background: {
+        color: hsl(var(--appColor-wine) / 0.3);
+    };
+
+    a {
+        text-decoration: none;
+        color: white;
+
+        &:hover,
+        &:focus {
+            color: hsl(var(--appColor-wine));
+        }
+    }
+}

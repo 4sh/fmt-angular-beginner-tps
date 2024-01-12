@@ -1,0 +1,45 @@
+button,
+.button {
+    border: none;
+    border-radius: var(--appConfig-globalRadius);
+    padding: var(--appConfig-globalSpacing);
+    border: {
+        width: 0.2rem;
+        color: hsl(var(--appColor-wine));
+        style: solid;
+    };
+    background: {
+        color: hsl(var(--appColor-wine));
+    };
+    color: white;
+    font: {
+        size: 1.4rem;
+        weight: bold;
+    };
+    padding: {
+        top: calc(var(--appConfig-globalSpacing));
+        right: calc(var(--appConfig-globalSpacing) * 2);
+        bottom: calc(var(--appConfig-globalSpacing));
+        left: calc(var(--appConfig-globalSpacing) * 2);
+    };
+    text-decoration: none;
+    cursor: pointer;
+    transition: filter var(--appConfig-globalTransition), background-color var(--appConfig-globalTransition);
+
+    &:hover,
+    &:focus {
+        background: {
+            color: hsl(var(--appColor-burgundy) / 0.8);
+        };
+    }
+
+    &[disabled] {
+        cursor: not-allowed;
+        border-color: hsl(var(--appColor-neutral-gray_dark) / 0.4);
+        background-color: hsl(var(--appColor-neutral-gray_dark) / 0.4);
+    }
+
+    &._round {
+      border-radius: 2rem;
+    }
+}

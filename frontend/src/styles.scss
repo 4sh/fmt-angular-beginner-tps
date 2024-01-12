@@ -1,0 +1,31 @@
+@use "assets/scss/normalize";
+@use "assets/scss/custom-properties";
+@use "assets/scss/buttons";
+@use "assets/scss/form";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font: {
+        size: 1.4rem;
+        family: 'Noto Sans Linear A', sans-serif;
+    }
+    background: {
+        image: url("/assets/images/winecellar-background.png");
+        size: cover;
+        repeat: no-repeat;
+        position: center center;
+    };
+    min-height: 100vh;
+}
+
+::selection {
+    color: white;
+    background: hsl(var(--appColor-burgundy));
+}

@@ -1,0 +1,100 @@
+:host {
+    flex: 0 auto;
+    margin: var(--appConfig-globalSpacing);
+    display: flex;
+    cursor: pointer;
+}
+
+.bottleTile {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: hsl(var(--appColor-purple_dark));
+    border-radius: var(--appConfig-globalRadius);
+    padding: calc(var(--appConfig-globalSpacing) * 1.5);
+    background-color: hsl(var(--appColor-neutral-gray_light));
+    box-shadow: 0 0 0.4rem 0.3rem hsl(var(--appColor-burgundy) / 0.5);
+    cursor: pointer;
+    transition: box-shadow var(--appConfig-globalTransition);
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 0 0.5rem 0.4rem hsl(var(--appColor-wine) / 0.7);
+    }
+
+    &._RED {
+        .bottleTile-bottle {
+            fill: hsl(var(--appColor-burgundy));
+        }
+    }
+
+    &._WHITE {
+        .bottleTile-bottle {
+            fill: hsl(var(--appColor-white-wine));
+        }
+    }
+
+    &._ROSE {
+        .bottleTile-bottle {
+            fill: hsl(var(--appColor-rose-wine));
+        }
+    }
+
+    &-title {
+        color: hsl(var(--appColor-wine));
+        font: {
+            weight: bold;
+            size: 2.4rem;
+        };
+        margin: {
+            bottom: var(--appConfig-globalSpacing);
+        };
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &-bottleSticker {
+        width: 10rem;
+        position: relative;
+        min-height: 12rem;
+    }
+
+    &-sticker {
+        width: 13rem;
+        position: absolute;
+        bottom: -1.2rem;
+        left: -1.5rem;
+        clip-path: polygon(calc(100% - 36.5px) calc(100% - 48.5px), calc(100% - 36.5px) 18.5px, 48px 18.5px, 48px 18.5px, 47.2832px 20.9867px, 46.2856px 23.3336px, 45.0264px 25.5209px, 43.5248px 27.5288px, 41.8px 29.3375px, 39.8712px 30.9272px, 37.7576px 32.2781px, 35.4784px 33.3704px, 33.0528px 34.1843px, 30.5px 34.7px, 30.5px calc(100% - 24.5px), calc(100% - 47.9px) calc(100% - 24.5px), calc(100% - 47.9px) calc(100% - 24.5px), calc(100% - 48.014px) calc(100% - 24.9829px), calc(100% - 48.116px) calc(100% - 25.4712px), calc(100% - 48.206px) calc(100% - 25.9643px), calc(100% - 48.284px) calc(100% - 26.4616px), calc(100% - 48.35px) calc(100% - 26.9625px), calc(100% - 48.404px) calc(100% - 27.4664px), calc(100% - 48.446px) calc(100% - 27.9727px), calc(100% - 48.476px) calc(100% - 28.4808px), calc(100% - 48.494px) calc(100% - 28.9901px), calc(100% - 48.5px) calc(100% - 29.5px), calc(100% - 48.5px) calc(100% - 29.5px), calc(100% - 48.3557px) calc(100% - 31.9814px), calc(100% - 47.9336px) calc(100% - 34.3752px), calc(100% - 47.2499px) calc(100% - 36.6658px), calc(100% - 46.3208px) calc(100% - 38.8376px), calc(100% - 45.1625px) calc(100% - 40.875px), calc(100% - 43.7912px) calc(100% - 42.7624px), calc(100% - 42.2231px) calc(100% - 44.4842px), calc(100% - 40.4744px) calc(100% - 46.0248px), calc(100% - 38.5613px) calc(100% - 47.3686px), calc(100% - 36.5px) calc(100% - 48.5px));
+        height: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    &-bottle {
+    }
+
+    &-vintage {
+        font: {
+            weight: bold;
+            size: 2.0rem;
+        };
+        margin: {
+            bottom: var(--appConfig-globalSpacing);
+        };
+    }
+
+    &-color {
+        font: {
+            style: italic;
+        };
+    }
+}
