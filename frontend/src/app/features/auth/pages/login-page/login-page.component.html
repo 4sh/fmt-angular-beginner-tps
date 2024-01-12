@@ -5,9 +5,12 @@
     <label for="password">Mot de passe</label>
     <input id="password" name="password" type="password" autocomplete="current-password" [(ngModel)]="password" />
 
-    <button class="button _round" type="submit"> <!--TODO-->
+    <button class="button _round" type="submit"
+            (click)="authenticate()">
         Valider
     </button>
 
-    <!--TODO-->
+    <div [hidden]="!authStatus" [class]="authStatus">
+        {{ authStatus }}
+    </div>
 </form>
