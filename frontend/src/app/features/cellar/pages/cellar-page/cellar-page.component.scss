@@ -1,0 +1,10 @@
+:host {
+    flex: 1;
+    display: flex;
+    padding: calc(var(--appConfig-globalSpacing) * 2);
+    color: white;
+    background: {
+        color: hsl(var(--appColor-neutral-gray_medium) / 0.9);
+    };
+    overflow: auto;
+}

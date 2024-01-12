@@ -1,0 +1,44 @@
+:host {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: {
+        color: hsl(var(--appColor-neutral-gray_medium) / 0.9);
+    };
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.login {
+    &-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-width: 20vw;
+        padding: calc(var(--appConfig-globalSpacing) * 3);
+        color: white;
+        background: {
+            color: hsl(var(--appColor-purple_dark) / 0.6);
+        };
+        border-radius: var(--appConfig-globalRadius);
+
+        label {
+            color: white;
+            align-self: start;
+        }
+
+        button[type=submit] {
+            margin: {
+                top: calc(var(--appConfig-globalSpacing) * 2);
+            };
+        }
+    }
+}

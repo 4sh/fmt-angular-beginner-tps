@@ -1,0 +1,60 @@
+:host {
+    flex: 1;
+    margin: {
+        right: calc(var(--appConfig-globalSpacing) * 2);
+    };
+    display: flex;
+    flex-direction: row;
+}
+
+.locale {
+    &-itemContainer {
+        display: flex;
+    }
+
+    &-item {
+        display: flex;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            color: hsl(
+                var(--appColor-wine-h),
+                var(--appColor-wine-s),
+                calc(var(--appColor-wine-l) + (100% - var(--appColor-wine-l)) * 0.4));
+        }
+
+        &._active {
+            color: white;
+            font: {
+                weight: bold;
+            };
+            cursor: default;
+
+            filter: drop-shadow(0 2px 1px hsl(var(--appColor-wine))) drop-shadow(0 -2px 1px hsl(var(--appColor-burgundy)));
+
+            &::before {
+                content: '\f1ab';
+                font: {
+                    size: 1.8rem;
+                    weight: 900;
+                    family: 'Line Awesome Free';
+                };
+                margin-right: calc(var(--appConfig-globalSpacing) / 2);
+            }
+        }
+    }
+
+    &-seperator {
+        color: white !important;
+        font: {
+            weight: normal !important;
+        };
+        margin: {
+            right: var(--appConfig-globalSpacing);
+            left: var(--appConfig-globalSpacing);
+        };
+    }
+}
