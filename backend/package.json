@@ -1,0 +1,31 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "scripts": {
+    "preinitdb": "npm install",
+    "initdb": "shx rm -rf db && shx cp -r db-samples db",
+    "prestart": "npm install && tsc",
+    "start": "node --no-warnings --loader ts-node/esm src/index.ts"
+  },
+  "exports": "./dist/index.js",
+  "author": "",
+  "node": ">=20",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "lowdb": "^6.1.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/lodash": "^4.14.201",
+    "shx": "0.3.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": "^20.10.0"
+  }
+}
