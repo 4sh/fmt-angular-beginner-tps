@@ -1,0 +1,15 @@
+@for (locale of supportedLocales; track locale; let last = $last) {
+    <div class="locale-itemContainer">
+
+        <span (click)="setLocale(locale)"
+              class="locale-item"
+              [class._active]="currentLocale === locale">
+            {{ locale }}
+        </span>
+
+        @if (!last) {
+            <span class="locale-seperator">|</span>
+        }
+    </div>
+}
+

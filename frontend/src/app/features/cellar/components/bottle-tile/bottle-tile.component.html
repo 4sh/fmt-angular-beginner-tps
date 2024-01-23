@@ -1,5 +1,5 @@
 @if(bottle){
-    <div class="bottleTile" [ngClass]="'_' + bottle.color">
+    <div class="bottleTile" [ngClass]="'_' + bottle.color" class="bottleTile" (click)="select(bottle)">
         <div class="bottleTile-title">{{ bottle.estate }}</div>
 
         <div class="bottleTile-content">
@@ -10,9 +10,7 @@
                 </svg>
                 @if(bottle.stickerUrl) {
                     <div class="bottleTile-sticker">
-                        <bottle-sticker-image [bottle]="bottle"
-                                              (imageClick)="onImageClick($event)">
-                        </bottle-sticker-image>
+                        <bottle-sticker-image [bottle]="bottle"></bottle-sticker-image>
                     </div>
 
                 }
@@ -20,7 +18,7 @@
 
             <div class="bottleTile-infos">
                 <div class="bottleTile-vintage">{{ bottle.vintage }}</div>
-                <div class="bottleTile-color">{{ bottle.color }}</div>
+                <div class="bottleTile-color">{{ 'bottle.color.' + bottle.color | translate }}</div>
             </div>
         </div>
     </div>

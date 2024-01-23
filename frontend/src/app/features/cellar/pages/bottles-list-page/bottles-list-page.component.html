@@ -1,7 +1,15 @@
+<div class="bottlesList-head">
+    <!-- TODO -->
+
+    <a class="button _round" [routerLink]="['/cellar/bottle/new']">
+        {{ 'cellar.bottle.list.create' | translate }}
+    </a>
+</div>
+
 <div class="bottlesList-list">
     @for(bottle of bottles; track bottle.id) {
         <bottle-tile [bottle]="bottle"
-                     [routerLink]="['/cellar/bottle', bottle.id, 'details']">
+                     (selected)="edit($event)">
         </bottle-tile>
     }
 </div>

@@ -1,26 +1,24 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Bottle} from '../../models/bottle.model';
 import {BottleStickerImageComponent} from '../bottle-sticker-image/bottle-sticker-image.component';
 import {NgClass} from '@angular/common';
-import {NotificationService} from '../../../../../shared/services/notification.service';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
     selector: 'bottle-tile',
     templateUrl: './bottle-tile.component.html',
     imports: [
         BottleStickerImageComponent,
-        NgClass
+        NgClass,
+        TranslatePipe
     ],
     styleUrl: './bottle-tile.component.scss'
 })
 export class BottleTileComponent {
     @Input() public bottle?: Bottle;
+    @Output() public selected = new EventEmitter<Bottle>();
 
-    constructor(private notificationService: NotificationService) {
-    }
-
-    public onImageClick(bottle: Bottle): void {
-        this.notificationService
-            .success(`click sur l’image de la bouteille ${bottle.estate}`);
+    public select(bottle: Bottle): void {
+        this.selected.emit(bottle);
     }
 }
