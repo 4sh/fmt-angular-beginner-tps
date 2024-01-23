@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import {createSession, deleteSession, getSessionById} from './services/auth.js';
 import {createBottle, deleteBottle, getManyBottles, getOneBottleById, updateBottle} from './services/bottles.js';
 import {computeStats} from './services/stats.js';
@@ -23,6 +24,8 @@ app.all('*', (req, res, next) => {
 });
 
 app.use(express.json());
+
+app.use(cors())
 
 app.use('/static', express.static('static'))
 

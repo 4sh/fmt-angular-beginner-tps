@@ -14,7 +14,7 @@
   "bottle.estate": "Estate",
   "bottle.vintage": "Vintage",
   "bottle.stickerUrl": "Sticker URL",
-  "bottle.createOrUpdate.success": "The bottle has been created / updated with success",
+  "bottle.save.success": "The bottle has been saved with success",
   "bottle.color": "Color",
   "bottle.color.RED": "Red",
   "bottle.color.ROSE": "Rose",
