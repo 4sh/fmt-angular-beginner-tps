@@ -1,4 +1,4 @@
-<div class="stats" *ngIf="stats"> <!-- TODO -->
+<div class="stats" *ngIf="stats$ | async as stats">
     <table>
         <thead>
         <tr>

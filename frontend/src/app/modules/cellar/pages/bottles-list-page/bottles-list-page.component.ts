@@ -14,7 +14,7 @@ export class BottlesListPageComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // TODO
-        this.bottles = this.cellarService.getManyBottles();
+        this.cellarService.getManyBottles()
+            .subscribe(bottles => this.bottles = bottles);
     }
 }
