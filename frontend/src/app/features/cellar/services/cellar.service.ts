@@ -5,6 +5,7 @@ import {Bottle, Color} from '../models/bottle.model';
     providedIn: 'root'
 })
 export class CellarService {
+    // TODO
     private bottles: Bottle[] = [
         {
             id: '1',
@@ -35,10 +36,12 @@ export class CellarService {
         }
     ];
 
+    // TODO
     public getManyBottles(): Bottle[] {
         return [...this.bottles];
     }
 
+    // TODO
     public getOneBottleById(id: string): Bottle | undefined {
         const foundBottle = this.bottles.find(bottle => bottle.id === id);
         if (foundBottle) {
@@ -47,4 +50,6 @@ export class CellarService {
             return undefined;
         }
     }
+
+    // TODO
 }

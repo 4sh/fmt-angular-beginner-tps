@@ -2,10 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Bottle} from '../../models/bottle.model';
 import {CellarService} from '../../services/cellar.service';
 import {RouterLink} from '@angular/router';
-import {NotificationService} from '../../../../../shared/services/notification.service';
 import {BottleTileComponent} from '../../components/bottle-tile/bottle-tile.component';
-import {delay} from 'rxjs';
-import {AuthService} from '../../../auth/services/auth.service';
 
 @Component({
     selector: 'bottles-list-page',
@@ -19,22 +16,11 @@ import {AuthService} from '../../../auth/services/auth.service';
 export class BottlesListPageComponent implements OnInit {
     public bottles?: Bottle[];
 
-    constructor(private cellarService: CellarService,
-                private authService: AuthService,
-                private notificationService: NotificationService) {
+    constructor(private cellarService: CellarService) {
     }
 
     ngOnInit(): void {
+        // TODO
         this.bottles = this.cellarService.getManyBottles();
-
-        this.authService.getCurrentUserIdentity()
-            .pipe(
-                delay(5000)
-            )
-            .subscribe(() => this.togglePromotionCode());
-    }
-
-    private togglePromotionCode(): void {
-        this.notificationService.success('Code promo -20% : WINE2024');
     }
 }

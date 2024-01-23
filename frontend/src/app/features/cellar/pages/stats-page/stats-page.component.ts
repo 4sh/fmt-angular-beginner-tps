@@ -11,6 +11,7 @@ import {KeyValuePipe} from '@angular/common';
     styleUrl: './stats-page.component.scss'
 })
 export class StatsPageComponent {
+    // TODO
     public stats: Stats = {
         byColor: {
             'RED': 2,
