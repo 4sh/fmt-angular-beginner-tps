@@ -4,6 +4,7 @@ import {BottlesListPageComponent} from './pages/bottles-list-page/bottles-list-p
 import {isAuthenticated} from '../auth/guards/is-authenticated.guard';
 import {BottleDetailsPageComponent} from './pages/bottle-details-page/bottle-details-page.component';
 import {StatsPageComponent} from './pages/stats-page/stats-page.component';
+import {RxjsSandboxPageComponent} from './pages/rxjs-sandbox-page/rxjs-sandbox-page.component';
 
 export const routes: Routes = [
     {
@@ -22,6 +23,10 @@ export const routes: Routes = [
             {
                 path: 'stats',
                 component: StatsPageComponent
+            },
+            {
+                path: 'rxjs-sandbox',
+                component: RxjsSandboxPageComponent
             },
             {
                 path: '**',
