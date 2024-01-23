@@ -6,8 +6,7 @@ import {UpperCasePipe} from '@angular/common';
     name: 'userIdentity'
 })
 export class UserIdentityPipe implements PipeTransform {
-    constructor(private upperCasePipe: UpperCasePipe) {
-    }
+    private readonly upperCasePipe: UpperCasePipe = new UpperCasePipe();
 
     transform(userIdentity?: UserIdentity): string {
         if (!userIdentity) {
@@ -16,5 +15,4 @@ export class UserIdentityPipe implements PipeTransform {
 
         return `${userIdentity.firstName} ${this.upperCasePipe.transform(userIdentity.lastName)}`;
     }
-
 }

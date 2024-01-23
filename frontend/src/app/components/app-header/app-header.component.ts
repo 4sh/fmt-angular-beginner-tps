@@ -10,5 +10,10 @@ import {RouterLink} from '@angular/router';
     ],
     standalone: true
 })
-export class AppHeaderComponent {
+export class AppHeaderComponent { // TODO
+    // TODO
+
+    public logout(): void {
+        // TODO
+    }
 }
