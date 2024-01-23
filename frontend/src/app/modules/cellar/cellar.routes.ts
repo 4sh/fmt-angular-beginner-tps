@@ -20,6 +20,10 @@ export const routes: Routes = [
                 component: BottleDetailsPageComponent
             },
             {
+                path: 'bottle/new',
+                component: BottleDetailsPageComponent
+            },
+            {
                 path: 'stats',
                 component: StatsPageComponent
             },

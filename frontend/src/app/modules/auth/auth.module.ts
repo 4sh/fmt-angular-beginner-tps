@@ -7,6 +7,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {routes} from './auth.routes';
+import {TranslateModule} from '@ngx-translate/core';
 import {UserIdentityPipe} from './pipes/user-identity.pipe';
 
 const components: unknown[] = [];
@@ -34,10 +35,12 @@ const pipes: unknown[] = [
         BrowserModule,
         HttpClientModule,
         RouterModule.forChild(routes),
-        FormsModule
+        FormsModule,
+        TranslateModule
     ],
     providers: [
-        UpperCasePipe
+        UpperCasePipe,
+        UserIdentityPipe
     ]
 })
 export class AuthModule {

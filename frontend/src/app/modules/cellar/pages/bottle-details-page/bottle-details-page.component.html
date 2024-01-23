@@ -1,19 +1,22 @@
-<form *ngIf="bottle">
-    <label for="estate">Château</label>
-    <input id="estate" name="estate" type="text" [value]="bottle.estate" disabled/>
+<form *ngIf="bottle"> <!-- TODO -->
+    <label for="estate">{{ 'bottle.estate' | translate }}</label>
+    <input id="estate" name="estate" type="text" [value]="bottle.estate"/> <!-- TODO -->
 
-    <label for="vintage">Millésime</label>
-    <input id="vintage" name="vintage" type="number" [value]="bottle.vintage" disabled/>
+    <label for="vintage">{{ 'bottle.vintage' | translate }}</label>
+    <input id="vintage" name="vintage" type="number" [value]="bottle.vintage"/> <!-- TODO -->
 
-    <label for="color">Couleur</label>
-    <input id="color" name="color" type="text" [value]="bottle.color" disabled/>
+    <label for="color">{{ 'bottle.color' | translate }}</label>
+    <input id="color" name="color" type="text" [value]="bottle.color"/> <!-- TODO -->
 
-    <label for="stickerUrl">URL étiquette</label>
-    <input id="stickerUrl" name="stickerUrl" type="url" [value]="bottle.stickerUrl" disabled/>
+    <label for="stickerUrl">{{ 'bottle.stickerUrl' | translate }}</label>
+    <input id="stickerUrl" name="stickerUrl" type="url" [value]="bottle.stickerUrl"/> <!-- TODO -->
 
     <div class="formButton">
-        <a class="button _round" [routerLink]="['/cellar/list']">
-            Retour
-        </a>
+        <button class="button _round" type="button" (click)="cancel()">
+            {{ 'cellar.bottle.edit.cancel' | translate }}
+        </button>
+        <button class="button _round" type="submit">
+            {{ 'cellar.bottle.edit.submit' | translate }}
+        </button>
     </div>
 </form>

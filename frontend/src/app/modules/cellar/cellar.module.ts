@@ -12,6 +12,9 @@ import {BottleStickerImageComponent} from './components/bottle-sticker-image/bot
 import {StatsPageComponent} from './pages/stats-page/stats-page.component';
 import {BottleDetailsPageComponent} from './pages/bottle-details-page/bottle-details-page.component';
 import {AppMenuComponent} from './components/app-menu/app-menu.component';
+import {TranslateModule} from '@ngx-translate/core';
+import {SharedModule} from '../../../shared/shared.module';
+import {FilterByEstatePipe} from './pipes/filter-by-estate.pipe';
 
 const components: unknown[] = [
     AppMenuComponent,
@@ -23,10 +26,13 @@ const pages: unknown[] = [
     CellarPageComponent,
     BottlesListPageComponent,
     BottleDetailsPageComponent,
+    BottleStickerImageComponent,
     StatsPageComponent
 ];
 
-const pipes: unknown[] = [];
+const pipes: unknown[] = [
+    FilterByEstatePipe
+];
 
 @NgModule({
     declarations: [
@@ -40,6 +46,8 @@ const pipes: unknown[] = [];
         HttpClientModule,
         RouterModule.forChild(routes),
         FormsModule,
+        TranslateModule,
+        SharedModule,
         NgOptimizedImage
     ]
 })

@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {Bottle} from '../models/bottle.model';
-import {catchError, Observable, of, throwError} from 'rxjs';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {Bottle} from '../models/bottle.model';
 import {Stats} from '../models/stats.model';
+import {catchError, Observable, of, throwError} from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -28,6 +28,16 @@ export class CellarService {
                     return throwError(() => err);
                 })
             );
+    }
+
+    public createOneBottle(bottle: Bottle): Observable<Bottle> {
+        return this.httpClient
+            .post<Bottle>(`/api/private/bottles`, bottle);
+    }
+
+    public updateOneBottle(bottle: Bottle): Observable<Bottle> {
+        return this.httpClient
+            .put<Bottle>(`/api/private/bottles/${bottle.id}`, bottle);
     }
 
     public getStats(): Observable<Stats> {

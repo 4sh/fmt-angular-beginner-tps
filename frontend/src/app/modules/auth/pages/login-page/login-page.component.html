@@ -1,13 +1,13 @@
 <form class="login-form" #form="ngForm">
-    <label for="login">Login</label>
+    <label for="login">{{ 'auth.login' | translate }}</label>
     <input id="login" name="login" type="text" autocomplete="username" [(ngModel)]="login" #loginControl="ngModel" required
            [class._error]="loginControl.errors && loginControl.errors['required'] === true" />
 
-    <label for="password">Mot de passe</label>
+    <label for="password">{{ 'auth.password' | translate }}</label>
     <input id="password" name="password" type="password" autocomplete="current-password" [(ngModel)]="password" #passwordControl="ngModel" required
            [class._error]="passwordControl.errors && passwordControl.errors['required'] === true" />
 
     <button class="button _round" type="submit" [disabled]="form.invalid" (click)="authenticate()">
-        Valider
+        {{ 'auth.submit' | translate }}
     </button>
 </form>

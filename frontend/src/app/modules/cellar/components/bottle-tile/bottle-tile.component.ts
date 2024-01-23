@@ -1,6 +1,5 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Bottle} from '../../models/bottle.model';
-import {NotificationService} from '../../../../../shared/services/notification.service';
 
 @Component({
     selector: 'bottle-tile',
@@ -9,12 +8,9 @@ import {NotificationService} from '../../../../../shared/services/notification.s
 })
 export class BottleTileComponent {
     @Input() public bottle?: Bottle;
+    @Output() public selected = new EventEmitter<Bottle>();
 
-    constructor(private notificationService: NotificationService) {
-    }
-
-    public onImageClick(bottle: Bottle): void {
-        this.notificationService
-            .success(`click sur l’image de la bouteille ${bottle.estate}`);
+    public select(bottle: Bottle): void {
+        this.selected.emit(bottle);
     }
 }

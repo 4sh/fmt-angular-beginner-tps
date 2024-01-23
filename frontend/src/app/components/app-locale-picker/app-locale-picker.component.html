@@ -1,0 +1,9 @@
+<div class="locale-itemContainer" *ngFor="let locale of supportedLocales; let last = last">
+
+    <span (click)="setLocale(locale)"
+          class="locale-item" [class._active]="currentLocale === locale">
+        {{ locale }}
+    </span>
+
+    <span class="locale-seperator" *ngIf="!last">|</span>
+</div>

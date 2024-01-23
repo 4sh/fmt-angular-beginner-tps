@@ -3,8 +3,7 @@ import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ToastrModule} from 'ngx-toastr';
 
-const pipes: unknown[] = [
-];
+const pipes: unknown[] = [];
 
 @NgModule({
     declarations: [

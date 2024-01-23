@@ -1,5 +1,14 @@
+<div class="bottlesList-head">
+    <!-- TODO -->
+
+    <a class="button _round" [routerLink]="['/cellar/bottle/new']">
+        {{ 'cellar.bottle.list.create' | translate }}
+    </a>
+</div>
+
 <div class="bottlesList-list">
+    <!-- TODO -->
     <bottle-tile *ngFor="let bottle of bottles"
                  [bottle]="bottle"
-                 [routerLink]="['/cellar/bottle', bottle.id, 'details']"></bottle-tile>
+                 (selected)="edit($event)"></bottle-tile>
 </div>

@@ -2,14 +2,14 @@
     <table>
         <thead>
         <tr>
-            <th>Couleur</th>
-            <th>Nombre</th>
+            <th>{{ 'bottle.color' | translate }}</th>
+            <th>{{ 'cellar.stats.bottle.count' | translate }}</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let entry of stats.byColor | keyvalue">
             <td>
-                {{ entry.key}}
+                {{ 'bottle.color.' + entry.key | translate }}
             </td>
             <td>
                 {{ entry.value }}
@@ -21,8 +21,8 @@
     <table>
         <thead>
         <tr>
-            <th>Château</th>
-            <th>Nombre</th>
+            <th>{{ 'bottle.estate' | translate }}</th>
+            <th>{{ 'cellar.stats.bottle.count' | translate }}</th>
         </tr>
         </thead>
         <tbody>
@@ -40,8 +40,8 @@
     <table>
         <thead>
         <tr>
-            <th>Millésime</th>
-            <th>Nombre</th>
+            <th>{{ 'bottle.vintage' | translate }}</th>
+            <th>{{ 'cellar.stats.bottle.count' | translate }}</th>
         </tr>
         </thead>
         <tbody>
