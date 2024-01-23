@@ -39,7 +39,7 @@ export class BottleDetailsPageComponent implements OnDestroy {
 
     public saveBottle(): void {
         const onAfterSave = () => {
-            this.notificationService.success('bottle.createOrUpdate.success');
+            this.notificationService.success('bottle.save.success');
             this.redirectToList();
         };
         if (this.bottle.id) {
