@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ToastrModule} from 'ngx-toastr';
 
 const pipes: unknown[] = [
 ];
@@ -11,7 +12,11 @@ const pipes: unknown[] = [
     ],
     imports: [
         CommonModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        ToastrModule.forRoot({
+            positionClass: 'toast-bottom-right',
+            progressBar: true,
+        })
     ],
     exports: [
         pipes

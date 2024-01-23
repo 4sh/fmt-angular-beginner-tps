@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Bottle} from '../../models/bottle.model';
+import {NotificationService} from '../../../../../shared/services/notification.service';
 
 @Component({
     selector: 'bottle-tile',
@@ -9,7 +10,11 @@ import {Bottle} from '../../models/bottle.model';
 export class BottleTileComponent {
     @Input() public bottle?: Bottle;
 
+    constructor(private notificationService: NotificationService) {
+    }
+
     public onImageClick(bottle: Bottle): void {
-        alert(`click sur l’image de la bouteille ${bottle.estate}`);
+        this.notificationService
+            .success(`click sur l’image de la bouteille ${bottle.estate}`);
     }
 }
