@@ -1,0 +1,44 @@
+:host {
+    flex: 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.bottlesList {
+    &-head {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--appConfig-globalSpacing);
+    }
+
+    &-search {
+        width: 30vw;
+    }
+
+    &-list {
+        flex: 1;
+        overflow-y: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        align-items: stretch;
+
+        bottle-tile {
+            width: calc(100% - var(--appConfig-globalSpacing) * 2);
+
+            @media screen and (min-width: 900px) {
+                width: calc(50% - var(--appConfig-globalSpacing) * 2);
+            }
+
+            @media screen and (min-width: 1200px) {
+                width: calc(33% - var(--appConfig-globalSpacing) * 2);
+            }
+
+            @media screen and (min-width: 1440px) {
+                width: calc(20% - var(--appConfig-globalSpacing) * 2);
+            }
+        }
+    }
+}

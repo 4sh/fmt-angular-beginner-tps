@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AuthModule} from './modules/auth/auth.module';
 import {RouterModule} from '@angular/router';
 import {routes} from './app-root.routes';
+import {CellarModule} from './modules/cellar/cellar.module';
 
 const components: unknown[] = [
     AppHeaderComponent,
@@ -28,7 +29,8 @@ const pages: unknown[] = [
         BrowserModule,
         HttpClientModule,
         RouterModule.forRoot(routes, {bindToComponentInputs: true}),
-        AuthModule
+        AuthModule,
+        CellarModule
     ],
     bootstrap: [AppRootPageComponent],
     providers: []

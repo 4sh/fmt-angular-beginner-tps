@@ -7,6 +7,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {routes} from './auth.routes';
+import {UserIdentityPipe} from './pipes/user-identity.pipe';
 
 const components: unknown[] = [];
 
@@ -15,7 +16,9 @@ const pages: unknown[] = [
     LoginPageComponent
 ];
 
-const pipes: unknown[] = [];
+const pipes: unknown[] = [
+    UserIdentityPipe
+];
 
 @NgModule({
     declarations: [
@@ -33,8 +36,7 @@ const pipes: unknown[] = [];
         RouterModule.forChild(routes),
         FormsModule
     ],
-    providers: [
-    ]
+    providers: []
 })
 export class AuthModule {
 }

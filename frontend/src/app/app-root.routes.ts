@@ -3,11 +3,11 @@ import {Routes} from '@angular/router';
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: '/auth',
+        redirectTo: '/cellar',
         pathMatch: 'full'
     },
     {
         path: '**',
-        redirectTo: '/auth'
+        redirectTo: '/cellar'
     }
 ];
