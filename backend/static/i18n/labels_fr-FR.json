@@ -11,6 +11,7 @@
   "menu.cellar": "Cave",
   "menu.stats": "Statistiques",
 
+  "bottle.get.error": "La bouteille a été retirée de la cave",
   "bottle.estate": "Château",
   "bottle.vintage": "Millésime",
   "bottle.stickerUrl": "URL étiquette",

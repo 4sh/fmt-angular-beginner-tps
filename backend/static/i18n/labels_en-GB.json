@@ -11,6 +11,7 @@
   "menu.cellar": "Cellar",
   "menu.stats": "Statistics",
 
+  "bottle.get.error": "The bottle no longer exists in cellar",
   "bottle.estate": "Estate",
   "bottle.vintage": "Vintage",
   "bottle.stickerUrl": "Sticker URL",

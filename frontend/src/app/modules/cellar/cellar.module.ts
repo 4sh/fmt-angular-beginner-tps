@@ -15,6 +15,11 @@ import {AppMenuComponent} from './components/app-menu/app-menu.component';
 import {TranslateModule} from '@ngx-translate/core';
 import {SharedModule} from '../../../shared/shared.module';
 import {FilterByEstatePipe} from './pipes/filter-by-estate.pipe';
+import {ExistingUrlValidatorDirective} from './directives/existing-url-validator.directive';
+
+const directives: unknown[] = [
+    ExistingUrlValidatorDirective
+];
 
 const components: unknown[] = [
     AppMenuComponent,
@@ -36,6 +41,7 @@ const pipes: unknown[] = [
 
 @NgModule({
     declarations: [
+        directives,
         components,
         pages,
         pipes,
