@@ -8,9 +8,11 @@ import {routes} from './cellar.routes';
 import {BottleTileComponent} from './components/bottle-tile/bottle-tile.component';
 import {CellarPageComponent} from './pages/cellar-page/cellar-page.component';
 import {BottlesListPageComponent} from './pages/bottles-list-page/bottles-list-page.component';
+import {BottleStickerImageComponent} from './components/bottle-sticker-image/bottle-sticker-image.component';
 
 const components: unknown[] = [
-    BottleTileComponent
+    BottleTileComponent,
+    BottleStickerImageComponent
 ];
 
 const pages: unknown[] = [

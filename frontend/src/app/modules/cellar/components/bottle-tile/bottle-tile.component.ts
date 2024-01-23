@@ -8,4 +8,8 @@ import {Bottle} from '../../models/bottle.model';
 })
 export class BottleTileComponent {
     @Input() public bottle?: Bottle;
+
+    public onImageClick(bottle: Bottle): void {
+        alert(`click sur l’image de la bouteille ${bottle.estate}`);
+    }
 }

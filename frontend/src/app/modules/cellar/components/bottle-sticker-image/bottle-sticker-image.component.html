@@ -1,0 +1,6 @@
+<img *ngIf="bottle && bottle.stickerUrl"
+     [ngSrc]="bottle.stickerUrl"
+     [width]="defaultWidth"
+     [height]="defaultHeight"
+     (click)="onImageClick()"
+     alt=""/>
