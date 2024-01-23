@@ -1,16 +1,21 @@
 import {Component, Input} from '@angular/core';
 import {Bottle} from '../../models/bottle.model';
-import {NgClass, NgOptimizedImage} from '@angular/common';
+import {BottleStickerImageComponent} from '../bottle-sticker-image/bottle-sticker-image.component';
+import {NgClass} from '@angular/common';
 
 @Component({
     selector: 'bottle-tile',
     templateUrl: './bottle-tile.component.html',
     imports: [
-        NgOptimizedImage,
+        BottleStickerImageComponent,
         NgClass
     ],
     styleUrl: './bottle-tile.component.scss'
 })
 export class BottleTileComponent {
     @Input() public bottle?: Bottle;
+
+    public onImageClick(bottle: Bottle): void {
+        alert(`click sur l’image de la bouteille ${bottle.estate}`);
+    }
 }

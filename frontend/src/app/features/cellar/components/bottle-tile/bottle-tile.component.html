@@ -10,7 +10,9 @@
                 </svg>
                 @if(bottle.stickerUrl) {
                     <div class="bottleTile-sticker">
-                        <img [ngSrc]="bottle.stickerUrl" [width]="64" [height]="64" alt=""/>
+                        <bottle-sticker-image [bottle]="bottle"
+                                              (imageClick)="onImageClick($event)">
+                        </bottle-sticker-image>
                     </div>
                 }
             </div>
