@@ -13,6 +13,7 @@ import {NotificationService} from '../../../../../shared/services/notification.s
 export class BottleDetailsPageComponent implements OnDestroy {
     public Color = Color;
     public bottle: Bottle = {id: undefined, estate: '', color: Color.RED, vintage: 2000};
+    public vintageMaxYear: number = new Date().getFullYear();
 
     private fetchBottleSubscription?: Subscription;
     private saveBottleSubscription?: Subscription;

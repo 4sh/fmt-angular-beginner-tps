@@ -1,25 +1,28 @@
-<form *ngIf="bottle" (ngSubmit)="saveBottle()">
+<form #bottleForm="ngForm" *ngIf="bottle" (ngSubmit)="saveBottle()">
     <label for="estate" class="required">{{ 'bottle.estate' | translate }}</label>
-    <input id="estate" name="estate" type="text" [(ngModel)]="bottle.estate"/>
+    <input id="estate" name="estate" type="text" [(ngModel)]="bottle.estate" required />
 
     <label for="vintage" class="required">{{ 'bottle.vintage' | translate }}</label>
-    <input id="vintage" name="vintage" type="number" [(ngModel)]="bottle.vintage"/>
+    <input id="vintage" name="vintage" type="number" [(ngModel)]="bottle.vintage" required
+           min="1800" [max]="vintageMaxYear" />
 
     <label for="color" class="required">{{ 'bottle.color' | translate }}</label>
-    <select id="color" name="color" [(ngModel)]="bottle.color">
+    <select id="color" name="color" [(ngModel)]="bottle.color" required>
         <option *ngFor="let color of Color | keyvalue" [value]="color.key">
             {{ 'bottle.color.' + color.key | translate }}
         </option>
     </select>
 
     <label for="stickerUrl">{{ 'bottle.stickerUrl' | translate }}</label>
-    <input id="stickerUrl" name="stickerUrl" type="url" [(ngModel)]="bottle.stickerUrl"/>
+    <input id="stickerUrl" name="stickerUrl" type="url" [(ngModel)]="bottle.stickerUrl" pattern="^https?://.*" />
 
     <div class="formButton">
         <button class="button _round" type="button" (click)="cancel()">
             {{ 'cellar.bottle.edit.cancel' | translate }}
         </button>
-        <button class="button _round" type="submit">
+        <button class="button _round"
+                type="submit"
+                [disabled]="bottleForm.invalid">
             {{ 'cellar.bottle.edit.submit' | translate }}
         </button>
     </div>
