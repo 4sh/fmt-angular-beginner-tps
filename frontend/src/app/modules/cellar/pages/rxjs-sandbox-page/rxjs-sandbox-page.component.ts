@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable, of} from 'rxjs';
+import {distinct, filter, interval, map, Observable, of, range, takeLast} from 'rxjs';
 
 @Component({
     selector: 'rxjs-sandbox-page',
@@ -15,20 +15,31 @@ export class RxjsSandboxPageComponent implements OnInit {
 
     ngOnInit(): void {
         // step 1
-        // TODO
+        const figures$ = range(0, 10);
 
         // step 2
-        // TODO
+        figures$.subscribe(figure => this.figures.push(figure));
 
         // step 3
-        // TODO
+        figures$
+            .pipe(
+                filter(figure => figure % 2 === 1),
+                map(oddNumber => oddNumber + 10),
+                takeLast(2)
+            )
+            .subscribe(figure => this.oddNumbers.push(figure));
 
         // step 4
-        // TODO
+        interval(1000)
+            .subscribe(_ => this.elapsedSeconds++);
 
         // step 5
         const bottles$: Observable<string> = of('cheval blanc', 'haut brion', 'cheval blanc', 'pape clement');
-        // TODO
+        bottles$
+            .pipe(
+                distinct()
+            )
+            .subscribe(bottle => this.bottles.push(bottle));
     }
 
 }
