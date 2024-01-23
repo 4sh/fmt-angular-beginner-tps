@@ -12,7 +12,6 @@ import {BottleStickerImageComponent} from './components/bottle-sticker-image/bot
 import {StatsPageComponent} from './pages/stats-page/stats-page.component';
 import {BottleDetailsPageComponent} from './pages/bottle-details-page/bottle-details-page.component';
 import {AppMenuComponent} from './components/app-menu/app-menu.component';
-import {RxjsSandboxPageComponent} from './pages/rxjs-sandbox-page/rxjs-sandbox-page.component';
 
 const components: unknown[] = [
     AppMenuComponent,
@@ -34,7 +33,6 @@ const pipes: unknown[] = [];
         components,
         pages,
         pipes,
-        RxjsSandboxPageComponent
     ],
     imports: [
         CommonModule,

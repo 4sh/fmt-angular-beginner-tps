@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {CommonModule, UpperCasePipe} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {AuthPageComponent} from './pages/auth-page/auth-page.component';
 import {LoginPageComponent} from './pages/login-page/login-page.component';
@@ -36,7 +36,9 @@ const pipes: unknown[] = [
         RouterModule.forChild(routes),
         FormsModule
     ],
-    providers: []
+    providers: [
+        UpperCasePipe
+    ]
 })
 export class AuthModule {
 }

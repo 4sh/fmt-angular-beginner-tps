@@ -4,12 +4,14 @@ import {AppRootPageComponent} from './pages/app-root-page/app-root-page.componen
 import {AppHeaderComponent} from './components/app-header/app-header.component';
 import {AppFooterComponent} from './components/app-footer/app-footer.component';
 import {BrowserModule} from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, provideHttpClient, withInterceptors} from '@angular/common/http';
 import {AuthModule} from './modules/auth/auth.module';
 import {RouterModule} from '@angular/router';
 import {routes} from './app-root.routes';
 import {CellarModule} from './modules/cellar/cellar.module';
 import {SharedModule} from '../shared/shared.module';
+import {errorInterceptor} from './modules/auth/interceptors/error.interceptor';
+import {authInterceptor} from './modules/auth/interceptors/auth.interceptor';
 
 const components: unknown[] = [
     AppHeaderComponent,
@@ -35,7 +37,11 @@ const pages: unknown[] = [
         CellarModule
     ],
     bootstrap: [AppRootPageComponent],
-    providers: []
+    providers: [
+        provideHttpClient(
+            withInterceptors([authInterceptor])
+        )
+    ]
 })
 export class AppRootModule {
 }
