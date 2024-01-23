@@ -1,4 +1,5 @@
 <div class="bottlesList-list">
     <bottle-tile *ngFor="let bottle of bottles"
-                 [bottle]="bottle"></bottle-tile> <!--TODO-->
+                 [bottle]="bottle"
+                 [routerLink]="['/cellar/bottle', bottle.id, 'details']"></bottle-tile>
 </div>
