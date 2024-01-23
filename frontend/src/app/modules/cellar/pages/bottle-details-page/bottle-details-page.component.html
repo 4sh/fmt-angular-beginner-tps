@@ -1,15 +1,19 @@
-<form *ngIf="bottle"> <!-- TODO -->
+<form *ngIf="bottle" (ngSubmit)="saveBottle()">
     <label for="estate">{{ 'bottle.estate' | translate }}</label>
-    <input id="estate" name="estate" type="text" [value]="bottle.estate"/> <!-- TODO -->
+    <input id="estate" name="estate" type="text" [(ngModel)]="bottle.estate"/>
 
     <label for="vintage">{{ 'bottle.vintage' | translate }}</label>
-    <input id="vintage" name="vintage" type="number" [value]="bottle.vintage"/> <!-- TODO -->
+    <input id="vintage" name="vintage" type="number" [(ngModel)]="bottle.vintage"/>
 
     <label for="color">{{ 'bottle.color' | translate }}</label>
-    <input id="color" name="color" type="text" [value]="bottle.color"/> <!-- TODO -->
+    <select id="color" name="color" [(ngModel)]="bottle.color">
+        <option *ngFor="let color of Color | keyvalue" [value]="color.key">
+            {{ 'bottle.color.' + color.key | translate }}
+        </option>
+    </select>
 
     <label for="stickerUrl">{{ 'bottle.stickerUrl' | translate }}</label>
-    <input id="stickerUrl" name="stickerUrl" type="url" [value]="bottle.stickerUrl"/> <!-- TODO -->
+    <input id="stickerUrl" name="stickerUrl" type="url" [(ngModel)]="bottle.stickerUrl"/>
 
     <div class="formButton">
         <button class="button _round" type="button" (click)="cancel()">
