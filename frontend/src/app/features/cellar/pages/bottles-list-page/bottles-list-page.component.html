@@ -1,5 +1,7 @@
 <div class="bottlesList-list">
     @for(bottle of bottles; track bottle.id) {
-        <bottle-tile [bottle]="bottle"></bottle-tile> <!--TODO-->
+        <bottle-tile [bottle]="bottle"
+                     [routerLink]="['/cellar/bottle', bottle.id, 'details']">
+        </bottle-tile>
     }
 </div>
