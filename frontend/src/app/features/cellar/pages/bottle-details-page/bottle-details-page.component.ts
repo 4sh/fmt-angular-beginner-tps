@@ -7,6 +7,7 @@ import {NotificationService} from '../../../../../shared/services/notification.s
 import {TranslatePipe} from '@ngx-translate/core';
 import {FormsModule} from '@angular/forms';
 import {KeyValuePipe} from '@angular/common';
+import {ExistingUrlValidatorDirective} from '../../directives/existing-url-validator.directive';
 
 @Component({
     selector: 'bottle-details-page',
@@ -14,13 +15,15 @@ import {KeyValuePipe} from '@angular/common';
     imports: [
         TranslatePipe,
         FormsModule,
-        KeyValuePipe
+        KeyValuePipe,
+        ExistingUrlValidatorDirective
     ],
     styleUrl: './bottle-details-page.component.scss'
 })
 export class BottleDetailsPageComponent implements OnDestroy {
     public Color = Color;
     public bottle: Bottle = {id: undefined, estate: '', color: Color.RED, vintage: 2000};
+    public vintageMaxYear: number = new Date().getFullYear();
 
     private fetchBottleSubscription?: Subscription;
     private saveBottleSubscription?: Subscription;
@@ -37,7 +40,7 @@ export class BottleDetailsPageComponent implements OnDestroy {
                 .getOneBottleById(id)
                 .subscribe(bottle => {
                     if (bottle === undefined) {
-                        this.notificationService.error('La bouteille a été retirée de la cave');
+                        this.notificationService.error('bottle.get.error');
                     } else {
                         this.bottle = bottle;
                     }

@@ -30,7 +30,7 @@ textarea {
                                 calc(var(--appColor-wine-l) + (100% - var(--appColor-wine-l)) * 0.3));
     }
 
-    &._error {
+    &._error, &.ng-invalid {
         filter: drop-shadow(0 4px 0 hsl(var(--appColor-error)));
     }
 }
