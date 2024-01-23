@@ -9,6 +9,7 @@ import {AuthModule} from './modules/auth/auth.module';
 import {RouterModule} from '@angular/router';
 import {routes} from './app-root.routes';
 import {CellarModule} from './modules/cellar/cellar.module';
+import {SharedModule} from '../shared/shared.module';
 
 const components: unknown[] = [
     AppHeaderComponent,
@@ -29,6 +30,7 @@ const pages: unknown[] = [
         BrowserModule,
         HttpClientModule,
         RouterModule.forRoot(routes, {bindToComponentInputs: true}),
+        SharedModule,
         AuthModule,
         CellarModule
     ],
