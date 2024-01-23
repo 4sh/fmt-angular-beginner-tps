@@ -1,0 +1,66 @@
+@if (stats) {
+    <div class="stats">
+        <table>
+            <thead>
+            <tr>
+                <th>Couleur</th>
+                <th>Nombre</th>
+            </tr>
+            </thead>
+            <tbody>
+                @for (entry of stats.byColor | keyvalue; track $index) {
+                    <tr>
+                        <td>
+                            {{ entry.key}}
+                        </td>
+                        <td>
+                            {{ entry.value }}
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Château</th>
+                <th>Nombre</th>
+            </tr>
+            </thead>
+            <tbody>
+                @for (entry of stats.byEstate | keyvalue; track $index) {
+                    <tr>
+                        <td>
+                            {{ entry.key}}
+                        </td>
+                        <td>
+                            {{ entry.value }}
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <table>
+            <thead>
+            <tr>
+                <th>Millésime</th>
+                <th>Nombre</th>
+            </tr>
+            </thead>
+            <tbody>
+                @for (entry of stats.byVintage | keyvalue; track $index) {
+                    <tr>
+                        <td>
+                            {{ entry.key}}
+                        </td>
+                        <td>
+                            {{ entry.value }}
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

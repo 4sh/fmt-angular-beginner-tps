@@ -1,0 +1,50 @@
+:host {
+    color: white;
+    background: {
+        color: hsl(var(--appColor-burgundy) / 0.95);
+    };
+}
+
+.appMenu {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+
+    &-item {
+        flex: 1;
+        display: flex;
+    }
+
+    &-icon {
+        font: {
+            size: 2.8rem;
+        }
+        margin: {
+            right: var(--appConfig-globalSpacing);
+        };
+    }
+
+    &-link {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        padding: calc(var(--appConfig-globalSpacing) * 2);
+        text-decoration: none;
+        color: white;
+        font: {
+            weight: bold;
+        };
+        transition: background-color var(--appConfig-globalTransition);
+
+        &:hover {
+            background-color: hsl(var(--appColor-wine) / 0.6);
+        }
+
+        &._active {
+            cursor: default;
+            background-color: hsl(var(--appColor-wine));
+        }
+    }
+}

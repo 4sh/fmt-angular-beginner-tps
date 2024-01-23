@@ -10,12 +10,13 @@ export const cellarRoutes: Routes = [
         canActivate: [isAuthenticated],
         children: [
             {
-                path: '',
+                path: 'list',
                 component: BottlesListPageComponent
             },
+            // TODO
             {
                 path: '**',
-                redirectTo: ''
+                redirectTo: 'list'
             }
         ]
     }
