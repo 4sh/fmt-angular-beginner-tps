@@ -1,0 +1,58 @@
+<div class="stats" *ngIf="stats">
+    <table>
+        <thead>
+        <tr>
+            <th>Couleur</th>
+            <th>Nombre</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let entry of stats.byColor | keyvalue">
+            <td>
+                {{ entry.key}}
+            </td>
+            <td>
+                {{ entry.value }}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Château</th>
+            <th>Nombre</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let entry of stats.byEstate | keyvalue">
+            <td>
+                {{ entry.key }}
+            </td>
+            <td>
+                {{ entry.value }}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Millésime</th>
+            <th>Nombre</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let entry of stats.byVintage | keyvalue">
+            <td>
+                {{ entry.key }}
+            </td>
+            <td>
+                {{ entry.value }}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

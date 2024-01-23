@@ -9,15 +9,21 @@ import {BottleTileComponent} from './components/bottle-tile/bottle-tile.componen
 import {CellarPageComponent} from './pages/cellar-page/cellar-page.component';
 import {BottlesListPageComponent} from './pages/bottles-list-page/bottles-list-page.component';
 import {BottleStickerImageComponent} from './components/bottle-sticker-image/bottle-sticker-image.component';
+import {StatsPageComponent} from './pages/stats-page/stats-page.component';
+import {BottleDetailsPageComponent} from './pages/bottle-details-page/bottle-details-page.component';
+import {AppMenuComponent} from './components/app-menu/app-menu.component';
 
 const components: unknown[] = [
+    AppMenuComponent,
     BottleTileComponent,
     BottleStickerImageComponent
 ];
 
 const pages: unknown[] = [
     CellarPageComponent,
-    BottlesListPageComponent
+    BottlesListPageComponent,
+    BottleDetailsPageComponent,
+    StatsPageComponent
 ];
 
 const pipes: unknown[] = [];

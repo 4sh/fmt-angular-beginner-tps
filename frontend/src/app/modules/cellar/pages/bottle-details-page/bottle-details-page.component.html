@@ -1,0 +1,19 @@
+<form *ngIf="bottle">
+    <label for="estate">Château</label>
+    <input id="estate" name="estate" type="text" [value]="bottle.estate" disabled/>
+
+    <label for="vintage">Millésime</label>
+    <input id="vintage" name="vintage" type="number" [value]="bottle.vintage" disabled/>
+
+    <label for="color">Couleur</label>
+    <input id="color" name="color" type="text" [value]="bottle.color" disabled/>
+
+    <label for="stickerUrl">URL étiquette</label>
+    <input id="stickerUrl" name="stickerUrl" type="url" [value]="bottle.stickerUrl" disabled/>
+
+    <div class="formButton">
+        <button class="button _round" type="button"> <!--TODO-->
+            Retour
+        </button>
+    </div>
+</form>

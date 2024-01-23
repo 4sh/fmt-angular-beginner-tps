@@ -1,10 +1,18 @@
 :host {
     flex: 1;
     display: flex;
-    padding: calc(var(--appConfig-globalSpacing) * 2);
+}
+
+app-menu {
+    flex: 0 auto;
+}
+
+.content {
     color: white;
+    padding: calc(var(--appConfig-globalSpacing) * 2);
     background: {
         color: hsl(var(--appColor-neutral-gray_medium) / 0.9);
     };
     overflow: auto;
+    flex: 1;
 }
