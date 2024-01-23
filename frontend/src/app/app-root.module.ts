@@ -10,8 +10,8 @@ import {RouterModule} from '@angular/router';
 import {routes} from './app-root.routes';
 import {CellarModule} from './modules/cellar/cellar.module';
 import {SharedModule} from '../shared/shared.module';
-import {errorInterceptor} from './modules/auth/interceptors/error.interceptor';
 import {authInterceptor} from './modules/auth/interceptors/auth.interceptor';
+import {errorInterceptor} from './modules/auth/interceptors/error.interceptor';
 
 const components: unknown[] = [
     AppHeaderComponent,
@@ -39,7 +39,7 @@ const pages: unknown[] = [
     bootstrap: [AppRootPageComponent],
     providers: [
         provideHttpClient(
-            withInterceptors([authInterceptor])
+            withInterceptors([authInterceptor, errorInterceptor])
         )
     ]
 })
