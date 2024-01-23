@@ -2,16 +2,20 @@
     <img src="assets/images/winecellar-logo.svg" alt="Winecellar.io" width="180px">
 </a>
 
-<div class="appHeader-user">
-    <i class="appHeaderUser-icon las la-user-circle"></i>
-    <span class="appHeaderUser-name">
-        <!--TODO -->
-    </span>
-</div>
+@if (currentUserIdentity) {
+    <div class="appHeader-user">
+        <i class="appHeaderUser-icon las la-user-circle"></i>
+        <span class="appHeaderUser-name">
+            {{ currentUserIdentity | userIdentity }}
+        </span>
+    </div>
+}
+
 
 <div class="appHeader-options">
-    <!-- TODO -->
-    <button type="button" class="button _round" (click)="logout()">
-        Déconnexion
-    </button>
+    @if (currentUserIdentity) {
+        <button type="button" class="button _round" (click)="logout()">
+            Déconnexion
+        </button>
+    }
 </div>
