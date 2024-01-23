@@ -2,10 +2,12 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Bottle} from '../../models/bottle.model';
 import {CellarService} from '../../services/cellar.service';
 import {RouterLink} from '@angular/router';
-import {BottleTileComponent} from '../../components/bottle-tile/bottle-tile.component';
 import {Router} from '@angular/router';
 import {TranslatePipe} from '@ngx-translate/core';
 import {Subscription} from 'rxjs';
+import {FormsModule} from '@angular/forms';
+import {FilterByEstatePipe} from '../../pipes/filter-by-estate.pipe';
+import {BottleTileComponent} from '../../components/bottle-tile/bottle-tile.component';
 
 @Component({
     selector: 'bottles-list-page',
@@ -13,7 +15,10 @@ import {Subscription} from 'rxjs';
     imports: [
         RouterLink,
         BottleTileComponent,
-        TranslatePipe
+        TranslatePipe,
+        FormsModule,
+        FilterByEstatePipe,
+        BottleTileComponent
     ],
     styleUrl: './bottles-list-page.component.scss'
 })

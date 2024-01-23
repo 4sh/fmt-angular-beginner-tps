@@ -1,5 +1,6 @@
 <div class="bottlesList-head">
-    <!-- TODO -->
+    <input type="search" class="bottlesList-search" [placeholder]="'cellar.bottle.list.search' | translate"
+           [(ngModel)]="query"/>
 
     <a class="button _round" [routerLink]="['/cellar/bottle/new']">
         {{ 'cellar.bottle.list.create' | translate }}
@@ -7,9 +8,8 @@
 </div>
 
 <div class="bottlesList-list">
-    @for(bottle of bottles; track bottle.id) {
+    @for (bottle of (bottles | filterByEstate:query); track bottle.id) {
         <bottle-tile [bottle]="bottle"
-                     (selected)="edit($event)">
-        </bottle-tile>
+                     (selected)="edit($event)"></bottle-tile>
     }
 </div>

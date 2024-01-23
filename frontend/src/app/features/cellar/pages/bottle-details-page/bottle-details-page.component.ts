@@ -5,12 +5,16 @@ import {Subscription} from 'rxjs';
 import {Bottle, Color} from '../../models/bottle.model';
 import {NotificationService} from '../../../../../shared/services/notification.service';
 import {TranslatePipe} from '@ngx-translate/core';
+import {FormsModule} from '@angular/forms';
+import {KeyValuePipe} from '@angular/common';
 
 @Component({
     selector: 'bottle-details-page',
     templateUrl: './bottle-details-page.component.html',
     imports: [
-        TranslatePipe
+        TranslatePipe,
+        FormsModule,
+        KeyValuePipe
     ],
     styleUrl: './bottle-details-page.component.scss'
 })
