@@ -2,16 +2,15 @@
     <img src="assets/images/winecellar-logo.svg" alt="Winecellar.io" width="180px">
 </a>
 
-<div class="appHeader-user">
+<div class="appHeader-user" *ngIf="currentUserIdentity">
     <i class="appHeaderUser-icon las la-user-circle"></i>
     <span class="appHeaderUser-name">
-        <!--TODO -->
+        {{ currentUserIdentity | userIdentity }}
     </span>
 </div>
 
 <div class="appHeader-options">
-    <!-- TODO -->
-    <button type="button" class="button _round" (click)="logout()">
+    <button type="button" class="button _round" (click)="logout()" *ngIf="currentUserIdentity">
         Déconnexion
     </button>
 </div>
