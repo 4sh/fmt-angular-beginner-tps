@@ -1,3 +1,5 @@
 <div class="bottlesList-list">
-    <!--TODO-->
+    @for(bottle of bottles; track bottle.id) {
+        <bottle-tile [bottle]="bottle"></bottle-tile>
+    }
 </div>

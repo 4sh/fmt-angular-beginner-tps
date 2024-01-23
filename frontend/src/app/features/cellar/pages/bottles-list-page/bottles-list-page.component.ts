@@ -1,9 +1,13 @@
 import {Component} from '@angular/core';
 import {Bottle, Color} from '../../models/bottle.model';
+import {BottleTileComponent} from '../../components/bottle-tile/bottle-tile.component';
 
 @Component({
     selector: 'bottles-list-page',
     templateUrl: './bottles-list-page.component.html',
+    imports: [
+        BottleTileComponent
+    ],
     styleUrl: './bottles-list-page.component.scss'
 })
 export class BottlesListPageComponent {
