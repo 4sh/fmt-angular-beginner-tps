@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, signal} from '@angular/core';
 import {Bottle} from '../../models/bottle.model';
 import {CellarService} from '../../services/cellar.service';
 import {RouterLink} from '@angular/router';
@@ -14,13 +14,13 @@ import {BottleTileComponent} from '../../components/bottle-tile/bottle-tile.comp
     styleUrl: './bottles-list-page.component.scss'
 })
 export class BottlesListPageComponent implements OnInit {
-    public bottles?: Bottle[];
+    public bottles = signal<Bottle[]>([]);
 
     constructor(private cellarService: CellarService) {
     }
 
     ngOnInit(): void {
         this.cellarService.getManyBottles()
-            .subscribe(bottles => this.bottles = bottles);
+            .subscribe(bottles => this.bottles.set(bottles));
     }
 }
