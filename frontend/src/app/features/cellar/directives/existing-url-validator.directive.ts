@@ -16,6 +16,9 @@ export class ExistingUrlValidatorDirective implements AsyncValidator {
     constructor(private httpClient: HttpClient) {}
 
     validate(control: AbstractControl): Observable<ValidationErrors | null> {
+        if (!control.value) {
+            return of(null);
+        }
         return this.httpClient.head(control.value)
             .pipe(
                 map(() => null),
