@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, input} from '@angular/core';
 import {Bottle} from '../../models/bottle.model';
 import {NgClass, NgOptimizedImage} from '@angular/common';
 
@@ -12,5 +12,5 @@ import {NgClass, NgOptimizedImage} from '@angular/common';
     styleUrl: './bottle-tile.component.scss'
 })
 export class BottleTileComponent {
-    @Input() public bottle?: Bottle;
+    public bottle = input<Bottle>();
 }
