@@ -1,6 +1,6 @@
 import {UserIdentityPipe} from '../../features/auth/pipes/user-identity.pipe';
 import {RouterLink} from '@angular/router';
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit, signal} from '@angular/core';
 import {Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 import {UserIdentity} from '../../features/auth/models/session.model';
@@ -21,7 +21,7 @@ import {TranslatePipe} from '@ngx-translate/core';
     standalone: true
 })
 export class AppHeaderComponent implements OnInit, OnDestroy {
-    public currentUserIdentity?: UserIdentity;
+    public currentUserIdentity = signal<UserIdentity | undefined>(undefined);
     private currentUserSubscription?: Subscription;
     private logoutSubscription?: Subscription;
 
@@ -32,7 +32,7 @@ export class AppHeaderComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.currentUserSubscription = this.authService
             .getCurrentUserIdentity()
-            .subscribe(identity => this.currentUserIdentity = identity);
+            .subscribe(identity => this.currentUserIdentity.set(identity));
     }
 
     public logout(): void {

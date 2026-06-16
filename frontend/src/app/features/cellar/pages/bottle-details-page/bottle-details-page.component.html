@@ -1,14 +1,14 @@
-@if (bottle) {
+@if (bottle()) {
     <form #bottleForm="ngForm" (ngSubmit)="saveBottle()">
         <label for="estate" class="required">{{ 'bottle.estate' | translate }}</label>
-        <input id="estate" name="estate" type="text" [(ngModel)]="bottle.estate" required/>
+        <input id="estate" name="estate" type="text" [(ngModel)]="bottle().estate" required/>
 
         <label for="vintage" class="required">{{ 'bottle.vintage' | translate }}</label>
-        <input id="vintage" name="vintage" type="number" [(ngModel)]="bottle.vintage"
+        <input id="vintage" name="vintage" type="number" [(ngModel)]="bottle().vintage"
                min="1800" [max]="vintageMaxYear"/>
 
         <label for="color" class="required">{{ 'bottle.color' | translate }}</label>
-        <select id="color" name="color" [(ngModel)]="bottle.color" required>
+        <select id="color" name="color" [(ngModel)]="bottle().color" required>
             @for (color of Color | keyvalue; track $index) {
                 <option [value]="color.key">
                     {{ 'bottle.color.' + color.key | translate }}
@@ -17,7 +17,7 @@
         </select>
 
         <label for="stickerUrl">{{ 'bottle.stickerUrl' | translate }}</label>
-        <input id="stickerUrl" name="stickerUrl" type="url" [(ngModel)]="bottle.stickerUrl"
+        <input id="stickerUrl" name="stickerUrl" type="url" [(ngModel)]="bottle().stickerUrl"
                [ngModelOptions]="{ updateOn: 'blur' }"
                existingUrlValidator
                pattern="^https?://.*"/>

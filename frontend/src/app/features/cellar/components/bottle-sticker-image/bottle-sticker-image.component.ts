@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, input, output} from '@angular/core';
 import {Bottle} from '../../models/bottle.model';
 import {NgOptimizedImage} from '@angular/common';
 
@@ -10,17 +10,13 @@ import {NgOptimizedImage} from '@angular/common';
     ],
     styleUrl: './bottle-sticker-image.component.scss'
 })
-export class BottleStickerImageComponent implements OnInit {
-    @Input() public bottle?: Bottle;
-    @Output() public imageClick: EventEmitter<Bottle> = new EventEmitter<Bottle>();
-    public defaultWidth?: number;
-    public defaultHeight?: number;
-
-    ngOnInit(): void {
-        this.defaultWidth = this.defaultHeight = 64;
-    }
+export class BottleStickerImageComponent {
+    public bottle = input<Bottle>();
+    public imageClick = output<Bottle>();
+    public defaultWidth = 64;
+    public defaultHeight = 64;
 
     public onImageClick(): void {
-        this.imageClick.emit(this.bottle);
+        this.imageClick.emit(this.bottle()!);
     }
 }

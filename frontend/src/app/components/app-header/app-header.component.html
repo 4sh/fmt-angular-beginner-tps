@@ -2,11 +2,11 @@
     <img src="assets/images/winecellar-logo.svg" alt="Winecellar.io" width="180px">
 </a>
 
-@if (currentUserIdentity) {
+@if (currentUserIdentity()) {
     <div class="appHeader-user">
         <i class="appHeaderUser-icon las la-user-circle"></i>
         <span class="appHeaderUser-name">
-            {{ currentUserIdentity | userIdentity }}
+            {{ currentUserIdentity() | userIdentity }}
         </span>
     </div>
 }
@@ -14,7 +14,7 @@
 <div class="appHeader-options">
     <app-locale-picker></app-locale-picker>
 
-    @if (currentUserIdentity) {
+    @if (currentUserIdentity()) {
         <button type="button" class="button _round" (click)="logout()">
             {{ 'auth.logout' | translate }}
         </button>
