@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy} from '@angular/core';
+import {Component, effect, input, OnDestroy} from '@angular/core';
 import {CellarService} from '../../services/cellar.service';
 import {Router} from '@angular/router';
 import {Subscription} from 'rxjs';
@@ -17,28 +17,28 @@ import {TranslatePipe} from '@ngx-translate/core';
 export class BottleDetailsPageComponent implements OnDestroy {
     public Color = Color;
     public bottle: Bottle = {id: undefined, estate: '', color: Color.RED, vintage: 2000};
+    public id = input<string>();
 
-    private fetchBottleSubscription?: Subscription;
     private saveBottleSubscription?: Subscription;
 
     constructor(private router: Router,
                 private notificationService: NotificationService,
                 private cellarService: CellarService) {
-    }
-
-    @Input()
-    public set id(id: string) {
-        if (id) {
-            this.fetchBottleSubscription = this.cellarService
-                .getOneBottleById(id)
-                .subscribe(bottle => {
-                    if (bottle === undefined) {
-                        this.notificationService.error('La bouteille a été retirée de la cave');
-                    } else {
-                        this.bottle = bottle;
-                    }
-                });
-        }
+        effect((onCleanup) => {
+            const id = this.id();
+            if (id) {
+                const sub = this.cellarService
+                    .getOneBottleById(id)
+                    .subscribe(bottle => {
+                        if (bottle === undefined) {
+                            this.notificationService.error('La bouteille a été retirée de la cave');
+                        } else {
+                            this.bottle = bottle;
+                        }
+                    });
+                onCleanup(() => sub.unsubscribe());
+            }
+        });
     }
 
     public saveBottle(): void {
@@ -67,7 +67,6 @@ export class BottleDetailsPageComponent implements OnDestroy {
     }
 
     ngOnDestroy(): void {
-        this.fetchBottleSubscription?.unsubscribe();
         this.saveBottleSubscription?.unsubscribe();
     }
 }

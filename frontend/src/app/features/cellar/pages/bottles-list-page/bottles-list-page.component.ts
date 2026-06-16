@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit, signal} from '@angular/core';
 import {Bottle} from '../../models/bottle.model';
 import {CellarService} from '../../services/cellar.service';
 import {RouterLink} from '@angular/router';
@@ -18,7 +18,7 @@ import {Subscription} from 'rxjs';
     styleUrl: './bottles-list-page.component.scss'
 })
 export class BottlesListPageComponent implements OnInit, OnDestroy {
-    public bottles: Bottle[] = [];
+    public bottles = signal<Bottle[]>([]);
     public query: string = '';
 
     private fetchBottlesSubscription?: Subscription;
@@ -30,7 +30,7 @@ export class BottlesListPageComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.fetchBottlesSubscription = this.cellarService
             .getManyBottles()
-            .subscribe(bottles => this.bottles = bottles);
+            .subscribe(bottles => this.bottles.set(bottles));
     }
 
     public edit(bottle: Bottle): void {
