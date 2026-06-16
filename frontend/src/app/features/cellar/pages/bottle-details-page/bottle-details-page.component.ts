@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, effect, input, signal} from '@angular/core';
 import {Bottle, Color} from '../../models/bottle.model';
 import {CellarService} from '../../services/cellar.service';
 
@@ -9,15 +9,15 @@ import {CellarService} from '../../services/cellar.service';
 })
 export class BottleDetailsPageComponent {
     public Color = Color;
-    public bottle?: Bottle;
+    public bottle = signal<Bottle | undefined>(undefined);
+    public id = input<string>();
 
     constructor(private cellarService: CellarService) {
-    }
-
-    @Input()
-    public set id(id: string) {
-        if (id) {
-            this.bottle = this.cellarService.getOneBottleById(id!);
-        }
+        effect(() => {
+            const id = this.id();
+            if (id) {
+                this.bottle.set(this.cellarService.getOneBottleById(id));
+            }
+        });
     }
 }
