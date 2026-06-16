@@ -1,5 +1,5 @@
 <div class="bottleTile"> <!--TODO-->
-    <div class="bottleTile-title">{{ bottle?.estate }}</div>
+    <div class="bottleTile-title">{{ bottle()?.estate }}</div>
 
     <div class="bottleTile-content">
         <div class="bottleTile-bottleSticker">
@@ -14,8 +14,8 @@
         </div>
 
         <div class="bottleTile-infos">
-            <div class="bottleTile-vintage">{{ bottle?.vintage }}</div>
-            <div class="bottleTile-color">{{ bottle?.color }}</div>
+            <div class="bottleTile-vintage">{{ bottle()?.vintage }}</div>
+            <div class="bottleTile-color">{{ bottle()?.color }}</div>
         </div>
     </div>
 </div>
